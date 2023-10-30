@@ -553,6 +553,7 @@ span{
 }
 
 /* BREAKPOINTS */
+
 @media(max-width: 1300px){
     html{
         font-size: 55%;
@@ -568,7 +569,11 @@ span{
     .home .profession-container .overlay{
         right: -9rem;
     }
+    .home_img img{
+        height: 693px;
+    }
 }
+
 @media(max-width: 1024px){
     .header{
         padding: 2rem 3%;
