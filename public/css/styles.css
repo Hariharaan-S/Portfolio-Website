@@ -382,7 +382,7 @@ span{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1),var(--main-color));
+    background: var(--main-color);
     color: var(--white-color);
     display: flex;
     justify-content: center;
@@ -395,15 +395,26 @@ span{
     cursor: pointer;
 }
 
-.portfolio-box:hover .portfolio-layer{
+.portfolio-box:hover .social_media{
+    background: var(--main-color);
     opacity: 1;
 }
+.portfolio-box:hover .trashtriage{
+    background: #79AC78;
+    opacity: 1;
+}
+
+.portfolio-box:hover .botonai{
+    background: #004225;
+    opacity: 1;
+}
+
 
 .portfolio-layer h4{
     font-size: 3rem;
 }
 .portfolio-layer p{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin: .3rem 0 1rem;
 }
 .portfolio-layer a{
@@ -430,7 +441,6 @@ span{
 }
 .testimonial-container .testimonial-wrapper{
     position: relative;
-    max-width: 90rem;
     width: 100%;
     padding: 5rem;
 }
@@ -439,6 +449,7 @@ span{
     padding: 1rem;
     border-radius: 2rem;
     overflow: hidden;
+    height: 50rem;
 }
 
 .testimonial-container .testimonial-slide{
@@ -453,10 +464,10 @@ span{
     border-bottom: .8rem solid var(--main-color);
 }
 .testimonial-slide img{
-    width: 14rem;
-    height: 14rem;
+    width: 64rem;
+    height: 54rem;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10px;
     border: .5rem solid var(--bg-color);
     outline: .5rem solid var(--main-color);
 }
