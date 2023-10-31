@@ -2,7 +2,8 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.6.4"
   },
   "name": "portfolio-website",
   "description": "This is my portfolio website which describes my skillset and other qualifications. \r (This site is under construction)",

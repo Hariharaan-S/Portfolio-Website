@@ -1,6 +1,24 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+mongoose.connect("mongodb://localhost:27017/portfolio");
+const serviceSchema = new mongoose.Schema({
+    service: String,
+    service_about: String
+});
+
+const Service = mongoose.model("about",serviceSchema);
+// const s1 = new Service({
+//     service: "Web Development",
+//     service_about: "Lovely one!"
+// });
+// s1.save();
+
+// async function myServices() {
+//     const services= await Service.find({});
+//     return services;
+// }
 
 app.set("view engine", "ejs");
 app.use(express.static("public"))
@@ -8,12 +26,17 @@ app.use('/services', express.static('public'));
 app.use('/projects', express.static('public'));
 
 app.get("/", function (req, res) {
-    res.render("index.ejs");
+   res.render("index.ejs");
 });
 
-app.get("/services/:name", (req, res) => {
+app.get("/services/:name", async (req, res) => {
     const service_name = req.params.name;
-    res.render("services.ejs", { name: service_name, about: "Hi, I am here to help you out. I'm currently in penultimate year at St. Joseph's College of Engineering with CGPA(as now) 9.28. I'm passionate in becoming a Full Stack Developer and did a handpick amount of projects. I, member of 'Unique Coders', am a Finalist in Smart India Hackathon held at 2022. I have completed training for", courses: ["C1","C2","C3"] , projects : ["P1","P2","P3"] })
+    const services= await Service.find({service: service_name});
+    const service_name_send = services[0].service;
+    const tServices = services[0].service_about;
+    const temp = tServices.split("\\n");
+    const service_about_send = temp.join(" ");
+    res.render("services.ejs", { name: service_name_send, about: service_about_send})
 })
 
 app.listen(5000, function () {

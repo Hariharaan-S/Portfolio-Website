@@ -11,37 +11,34 @@
 </head>
 
 <body>
-    <section id="service_name">
-        <div class="overlay"></div>
-        <div class="section_back">
-            <h1>It's <%= name %>
-            </h1>
-        </div>
+    <nav class="navbar">
+        <button type="button" onclick="goToHome()">Back</button>
+        <ul class="navbal-list">
+            <li class="navitem"><a href="#about_services">About</a></li>
+            <li class="navitem"><a href="#services_course">Courses</a></li>
+            <li class="navitem"><a href="#services_project">Projects</a></li>
+        </ul>
+    </nav>
+    <section class="main_section">
+        <section id="about_services">
+            <h2 class="heading">About <span><%= name %></span></h2>
+            </h2>
+            <div class="about_para">
+                <%= about %>
+            </div>
+        </section>
+        <section id="services_course">
+            <h2>Courses I did:</h2>
+        </section>
+        <section id="services_project">
+            <h2>Projects I Did:</h2>
+        </section>
     </section>
-    <section id="about_services">
-        <h2 class="heading">About <span><%= name %></span></h2>
-        </h2>
-        <div class="about_para">
-            <%= about %>
-        </div>
-    </section>
-    <section id="services_course">
-        <h2>Courses I did:</h2>
-        <table>
-            <% for(var i=0;i<courses.length;i++){ %>
-                <tr><td><%= courses[i] %></td></tr>
-            <% } %>
-        </table>
-    </section>
-    <section id="services_project">
-        <h2>Projects I Did:</h2>
-        <table>
-            <% for(var i=0;i<projects.length;i++){ %>
-                <tr><td><%= projects[i] %></td></tr>
-            <% } %>
-        </table>
-    </section>
-    <button type="button" onclick="window.location.href='/'">Back</button>
 </body>
+<script>
+    function goToHome(){
+        window.location.href = "/";
+    }
+</script>
 
 </html>
