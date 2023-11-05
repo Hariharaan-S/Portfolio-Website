@@ -4,41 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= name %></title>
+    <title>
+        <%= name %>
+    </title>
     <script src="https://kit.fontawesome.com/c1b3701aff.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="css//services.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <button type="button" onclick="goToHome()">Back</button>
-        <ul class="navbal-list">
-            <li class="navitem"><a href="#about_services">About</a></li>
-            <li class="navitem"><a href="#services_course">Courses</a></li>
-            <li class="navitem"><a href="#services_project">Projects</a></li>
-        </ul>
-    </nav>
-    <section class="main_section">
-        <section id="about_services">
-            <h2 class="heading">About <span><%= name %></span></h2>
-            </h2>
-            <div class="about_para">
-                <%= about %>
-            </div>
-        </section>
-        <section id="services_course">
-            <h2>Courses I did:</h2>
-        </section>
-        <section id="services_project">
-            <h2>Projects I Did:</h2>
-        </section>
+    <section id="service_head">
+        <div class="heading">
+            <%= name %>
+        </div>
+        <div class="sub-heading">
+            <%= content %>
+        </div>
+        <div class="overlay"></div>
+        <div class="bg-image">
+            <img src="images/<%= name %>.png" alt="" srcset="">
+        </div>
+        <button id="know_more" type="submit" onclick="goTo('<%= name %>')">Know More</button>
     </section>
+    <section id="courses">
+        <% if(c_name.length !=0) { %>
+            <div class="course_head"><span>Courses</span> I have Done</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <p>Course Name</p>
+                        </th>
+                        <th>
+                            <pre>Completion Date</pre>
+                        </th>
+                        <th>
+                            <p>Company Name</p>
+                        </th>
+                    </tr>
+                </thead>
+                <% for(var i=0;i<c_name.length;i++){ %>
+                    <tr>
+                        <td>
+                            <p>
+                                <%= c_name[i].name %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= c_name[i].completion_date %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= c_name[i].company %>
+                            </p>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+            <% } %>
+    </section>
+    <section id="projects">
+        <% if(p_name.length !=0) { %>
+            <div class="course_head"><span>Projects</span> I have Done</div>
+            <table cellpadding="15">
+                <thead>
+                    <tr>
+                        <th>
+                            <p>Project Name</p>
+                        </th>
+                        <th>
+                            <pre>Completion Date</pre>
+                        </th>
+                        <th>
+                            <p>Description</p>
+                        </th>
+                        <th>
+                            <p>Github Link</p>
+                        </th>
+                    </tr>
+                </thead>
+                <% for(var i=0;i<p_name.length;i++){ %>
+                    <tr>
+                        <td>
+                            <p>
+                                <%= p_name[i].name %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= p_name[i].date %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= p_name[i].description %>
+                            </p>
+                        </td>
+                        <td>
+                            <p><a href="<%= p_name[i].github_link %>">
+                                    <%= p_name[i].github_link %>
+                                </a></p>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+            <% } %>
+    </section>
+    <section id="skills">
+        <% if(s_name.length !=0) { %>
+            <div class="course_head skill_head"><span>Skill</span>Set</div>
+            <div class="skill_names">
+                <div class="skill_part">
+                    <% for(var i=0;i<s_name.length;i++){ %>
+                        <p class="skill_name">
+                            <%= s_name[i].name %>
+                        </p>
+                        <div class="skill-bar">
+                            <div class="skill-per" per="<%= s_name[i].range %>" style="max-width:<%= s_name[i].range %>%;"></div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        <% } %>
+    </section>
+    <script>
+        function goTo(name) {
+            if (name == "Web Development") {
+                window.location.href = "https://en.wikipedia.org/wiki/Web_development#:~:text=Web%20development%20is%20the%20work,businesses%2C%20and%20social%20network%20services.";
+            }
+            else if (name == "ML Development") {
+                window.location.href = "https://www.techtarget.com/searchenterpriseai/definition/machine-learning-ML";
+            }
+            else {
+                window.location.href = "https://www.geeksforgeeks.org/competitive-programming-a-complete-guide/";
+            }
+        }
+    </script>
 </body>
-<script>
-    function goToHome(){
-        window.location.href = "/";
-    }
-</script>
 
 </html>
