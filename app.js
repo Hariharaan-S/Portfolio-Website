@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
+var nodemailer = require('nodemailer');
 mongoose.connect("mongodb://localhost:27017/portfolio");
 const course = new mongoose.Schema({
   name: String,
@@ -36,33 +38,60 @@ const Service = mongoose.model("Service", serviceSchema);
 //     return services;
 // }
 
-const s1 = new Service({
-  content: "Writing versatile and platform-independent code.\n Languages's strong community support and libraries enhance development.\n",
-  courses: [
-    {
-      name: "2022 Complete Python Bootcamp From Zero to Hero in Python",
-      completion_date: "Jan 2022",
-      company: "Udemy",
-    },
-    {
-      name: "Crash course on Python",
-      completion_date: "Mar 2023",
-      company: "Coursera",
-    }
-  ],
-  projects: [],
-  skillset: [{
-    name: "Python",
-    range: 80
-  },
-  {
-    name: "Java",
-    range: 78
-  }
-],
-  service_name: "Competitive Coder",
-})
-// s1.save();
+// const s1 = new Service({
+//   content: "Writing versatile and platform-independent code.\n Languages's strong community support and libraries enhance development.\n",
+//   courses: [
+//     {
+//       name: "2022 Complete Python Bootcamp From Zero to Hero in Python",
+//       completion_date: "Jan 2022",
+//       company: "Udemy",
+//     },
+//     {
+//       name: "Crash course on Python",
+//       completion_date: "Mar 2023",
+//       company: "Coursera",
+//     }
+//   ],
+//   projects: [],
+//   skillset: [{
+//     name: "Python",
+//     range: 80
+//   },
+//   {
+//     name: "Java",
+//     range: 78
+//   }
+// ],
+//   service_name: "Competitive Coder",
+// })
+// // s1.save();
+
+////////////////////////////// USING NODEMAILER TO SEND EMAIL FROM OUR ACCNT TO OTHERS /////////////////////////////////////////
+// app.post("/send",(req,res) =>{
+//   var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//       user: 's.hariharaan2003@gmail.com',
+//       pass: 'vlzgomjomfhckqtn'
+//     }
+//   });
+  
+//   var mailOptions = {
+//     from: req.body.email,
+//     to: 's.hariharaan2003@gmail.com',
+//     subject: req.body.subject,
+//     text: "From: " + req.body.name + "\nMessage: " + req.body.message + "\nPhone Number:" + req.body.phone 
+//   };
+  
+//   transporter.sendMail(mailOptions, function(error, info){
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log('Email sent: ' + info.response);
+//     }
+//   });
+//   res.redirect("/");
+// })
 
 app.set("view engine", "ejs");
 app.use(express.static("public"))

@@ -26,6 +26,26 @@
         </div>
         <button id="know_more" type="submit" onclick="goTo('<%= name %>')">Know More</button>
     </section>
+
+    <section id="skills">
+        <% if(s_name.length !=0) { %>
+            <div class="course_head skill_head"><span>Skill</span>Set</div>
+            <div class="skill_names">
+                <div class="skill_part">
+                    <% for(var i=0;i<s_name.length;i++){ %>
+                        <p class="skill_name">
+                            <%= s_name[i].name %>
+                        </p>
+                        <div class="skill-bar">
+                            <div class="skill-per" per="<%= s_name[i].range %>"
+                                style="max-width:<%= s_name[i].range %>%;"></div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+            <% } %>
+    </section>
+
     <section id="courses">
         <% if(c_name.length !=0) { %>
             <div class="course_head"><span>Courses</span> I have Done</div>
@@ -112,36 +132,9 @@
             </table>
             <% } %>
     </section>
-    <section id="skills">
-        <% if(s_name.length !=0) { %>
-            <div class="course_head skill_head"><span>Skill</span>Set</div>
-            <div class="skill_names">
-                <div class="skill_part">
-                    <% for(var i=0;i<s_name.length;i++){ %>
-                        <p class="skill_name">
-                            <%= s_name[i].name %>
-                        </p>
-                        <div class="skill-bar">
-                            <div class="skill-per" per="<%= s_name[i].range %>" style="max-width:<%= s_name[i].range %>%;"></div>
-                        </div>
-                        <% } %>
-                </div>
-            </div>
-        <% } %>
-    </section>
-    <script>
-        function goTo(name) {
-            if (name == "Web Development") {
-                window.location.href = "https://en.wikipedia.org/wiki/Web_development#:~:text=Web%20development%20is%20the%20work,businesses%2C%20and%20social%20network%20services.";
-            }
-            else if (name == "ML Development") {
-                window.location.href = "https://www.techtarget.com/searchenterpriseai/definition/machine-learning-ML";
-            }
-            else {
-                window.location.href = "https://www.geeksforgeeks.org/competitive-programming-a-complete-guide/";
-            }
-        }
-    </script>
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/services.js"></script>
 </body>
 
 </html>

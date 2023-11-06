@@ -126,6 +126,8 @@ td{
     margin: 5rem 0;
 }
 #skills{
+    position: relative;
+    margin-top: 5rem;
     max-width: 80%;
 }
 .skill_part{
