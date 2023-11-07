@@ -64,6 +64,24 @@ var swiper = new Swiper(".mySwiper", {
     /*============Scroll Reveal================*/
   ScrollReveal({distance: '80px',duration: 2000, delay: 200});
   ScrollReveal().reveal('.home-content, .heading',{origin: 'top'});
-  ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form',{origin: 'bottom'});
+  ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact .form',{origin: 'bottom'});
   ScrollReveal().reveal('.home-content h1, .about-img img',{origin: 'left'});
   ScrollReveal().reveal('.home-content h3, .home-content p, .about-content',{origin: 'right'});
+
+  /*==============Send Mail=====================*/
+  async function sendMail(){
+    var success = await fetch("/send?name="+document.getElementById("name").value+"&email="+document.getElementById("email").value+"&phone="+document.getElementById("phone").value+"&message="+document.getElementById("message").value);
+    if(success.ok){
+      Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "s.hariharaan.college@gmail.com",
+        Password : "",
+        From : 's.hariharaan.college@gmail.com',
+        To : document.getElementById("email").value,
+        Subject : "Successfully Submitted the Query",
+        Body : "Thank you for reaching us. We will see to the query and turn in within 2 or 3 working days."
+      }).then(
+        window.location.href="/"
+      );
+    }
+  }

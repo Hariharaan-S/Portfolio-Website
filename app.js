@@ -31,72 +31,36 @@ const serviceSchema = new mongoose.Schema({
   service_name: String
 });
 
-const Service = mongoose.model("Service", serviceSchema);
-
-// async function myServices() {
-//     const services= await Service.find({});
-//     return services;
-// }
-
-// const s1 = new Service({
-//   content: "Writing versatile and platform-independent code.\n Languages's strong community support and libraries enhance development.\n",
-//   courses: [
-//     {
-//       name: "2022 Complete Python Bootcamp From Zero to Hero in Python",
-//       completion_date: "Jan 2022",
-//       company: "Udemy",
-//     },
-//     {
-//       name: "Crash course on Python",
-//       completion_date: "Mar 2023",
-//       company: "Coursera",
-//     }
-//   ],
-//   projects: [],
-//   skillset: [{
-//     name: "Python",
-//     range: 80
-//   },
-//   {
-//     name: "Java",
-//     range: 78
-//   }
-// ],
-//   service_name: "Competitive Coder",
-// })
-// // s1.save();
-
-////////////////////////////// USING NODEMAILER TO SEND EMAIL FROM OUR ACCNT TO OTHERS /////////////////////////////////////////
-// app.post("/send",(req,res) =>{
-//   var transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//       user: 's.hariharaan2003@gmail.com',
-//       pass: 'vlzgomjomfhckqtn'
-//     }
-//   });
-  
-//   var mailOptions = {
-//     from: req.body.email,
-//     to: 's.hariharaan2003@gmail.com',
-//     subject: req.body.subject,
-//     text: "From: " + req.body.name + "\nMessage: " + req.body.message + "\nPhone Number:" + req.body.phone 
-//   };
-  
-//   transporter.sendMail(mailOptions, function(error, info){
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log('Email sent: ' + info.response);
-//     }
-//   });
-//   res.redirect("/");
-// })
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phone: Number,
+  message: String
+});
 
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 app.use('/services', express.static('public'));
 app.use('/projects', express.static('public'));
+const Service = mongoose.model("Service", serviceSchema);
+const Contact = mongoose.model("Contact",contactSchema);
+
+////////////////////////////// SENDING MAIL /////////////////////////////////////////
+app.get("/send",(req,res) =>{
+  const name = req.query.name;
+  const email = req.query.email;
+  const phone = req.query.phone;
+  const message = req.query.message;
+  const obj = new Contact({
+    name: name,
+    email: email,
+    phone: phone,
+    message: message
+  });
+  obj.save();
+
+  res.send("true");
+})
 
 app.get("/", function (req, res) {
   res.render("index.ejs");
