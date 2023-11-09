@@ -146,6 +146,7 @@ td{
     margin: 2rem;
 }
 .skill-per{
+    max-width: var(--i);
     height: 14px;
     background-color: #190482;
     border-radius: 10px;

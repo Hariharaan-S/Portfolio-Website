@@ -76,6 +76,11 @@ app.get("/services/:name", async (req, res) => {
   res.render("services.ejs", { name: ser_name, content: head_content, c_name: c_names, p_name: p_names,s_name: s_name })
 })
 
+app.get("/projects/:name",async(req,res) => {
+  const ser_name = req.params.name;
+  res.render('projects.ejs',{name: ser_name,content: "I am Hariharaan"});
+})
+
 app.listen(5000, function () {
   console.log("Server is running on port 5000");
 })
