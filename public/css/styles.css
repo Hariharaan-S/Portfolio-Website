@@ -564,6 +564,15 @@ span{
 }
 
 /* BREAKPOINTS */
+@media(max-width: 1366px){
+    .home_img img{
+        height: 682px;
+    }
+    .about{
+        position: relative;
+        margin-top: 7rem;
+    }
+}
 
 @media(max-width: 1300px){
     html{

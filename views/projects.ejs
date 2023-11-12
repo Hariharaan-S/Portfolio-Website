@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= name %></title>
+    <title>Projects || <%= name %>
+    </title>
     <link rel="stylesheet" href="css/projects.css">
 </head>
+
 <body>
     <section id="prjects_head">
         <div class="heading">
@@ -16,8 +19,59 @@
         </div>
         <div class="overlay"></div>
         <div class="bg-image">
-            <img src="images/<%= name %>.png" alt="" srcset="">
+            <img src="images/<%= image_name %>.png" alt="" srcset="">
         </div>
     </section>
+    <!-- <svg id="svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 600 1200">
+        <path class="line01 line" d="M 10 200  600 200" ></path>
+        <path class="line02 line" d="M 10 400  600 400" ></path>
+        <path class="line03 line" d="M 10 600  600 600" ></path>
+        <path class="line04 line" d="M 10 800  600 800" ></path>
+        <path class="line05 line" d="M 10 1000  600 1000" ></path>
+        <text class="text01" x="30" y="190">2018</text>
+        <text class="text02" x="30" y="390">2019</text>
+        <text class="text03" x="30" y="590">2020</text>
+      
+        <path class="theLine" 
+              d="M -5,0
+                 Q 450 230 300 450 
+                 T 130 750
+                 Q 100 850 300 1000
+                 T 150 1200"
+              fill="none" stroke="white" stroke-width="10px" />
+        
+        
+        
+        <circle class="ball ball01" r="20" cx="50" cy="100"></circle>
+        <circle class="ball ball02" r="20" cx="278" cy="201"></circle>
+        <circle class="ball ball03" r="20" cx="327" cy="401"></circle>
+        <circle class="ball ball04" r="20" cx="203" cy="601"></circle>
+      
+      </svg> -->
+    <section id="description">
+        <div class="desc-part about">
+            <div class="heading">
+                <span>About</span>
+                <%= name %>
+            </div>
+        </div>
+        <div class="desc-part techstack">
+            <div class="heading">
+                <span>Tech</span> Stack
+            </div>
+        </div>
+        <div class="desc-part key-features">
+            <div class="heading">
+                <span>Key </span>Features
+            </div>
+        </div>
+        <div class="desc-part video-images">
+            <div class="heading">
+                <span>Demo</span> Video and <span>Screen</span>shots
+            </div>
+        </div>
+    </section>
+    <script src="js\projects.js"></script>
 </body>
+
 </html>

@@ -79,3 +79,54 @@ span{
     position: relative;
     margin: 5% 2%;
 }
+#description .desc-part{
+  position: relative;
+  margin: 3rem 2rem;
+}
+
+#description .desc-part:nth-child(1){
+  margin-top: -2rem;
+}
+
+#description .heading{
+  font-size: 2.5rem;
+  text-align: start;
+  position:relative;
+  color: black;
+}
+
+/* body {
+	height: 400vh;
+  background: black;
+  color: white;
+}
+
+
+
+
+.header-section {
+  margin: 100px auto 0;
+}
+
+svg {
+  max-width: 600px;
+  overflow: visible;
+  margin-top: 60vh;
+}
+
+.ball {
+  fill: white;
+  visibility: hidden;
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+}
+text {
+  fill: white;
+  font-size: 15px;
+  font-family: "Signika Negative", sans-serif; 
+  visibility: hidden;
+} */

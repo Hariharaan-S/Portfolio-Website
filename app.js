@@ -3,7 +3,6 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
-var nodemailer = require('nodemailer');
 mongoose.connect("mongodb://localhost:27017/portfolio");
 const course = new mongoose.Schema({
   name: String,
@@ -30,6 +29,7 @@ const serviceSchema = new mongoose.Schema({
   skillset: [skill],
   service_name: String
 });
+
 
 const contactSchema = new mongoose.Schema({
   name: String,
@@ -77,8 +77,15 @@ app.get("/services/:name", async (req, res) => {
 })
 
 app.get("/projects/:name",async(req,res) => {
-  const ser_name = req.params.name;
-  res.render('projects.ejs',{name: ser_name,content: "I am Hariharaan"});
+  var ser_name = req.params.name;
+  var t = ser_name;
+  var new_name = "";
+  if(ser_name === "Trash_Triage"){
+    const temp = ser_name.split("_");
+    new_name = temp[0]+temp[1];
+    ser_name = new_name;
+  }
+  res.render('projects.ejs',{name: ser_name,image_name: t,content: "I am Hariharaan"});
 })
 
 app.listen(5000, function () {
