@@ -74,9 +74,9 @@ var swiper = new Swiper(".mySwiper", {
     if(success.ok){
       Email.send({
         Host : "smtp.elasticemail.com",
-        Username : "s.hariharaan.college@gmail.com",
+        Username : "s.hariharaan2003@gmail.com",
         Password : "",
-        From : 's.hariharaan.college@gmail.com',
+        From : 's.hariharaan2003@gmail.com',
         To : document.getElementById("email").value,
         Subject : "Successfully Submitted the Query",
         Body : "Thank you for reaching us. We will see to the query and turn in within 2 or 3 working days."

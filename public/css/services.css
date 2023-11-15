@@ -55,7 +55,7 @@ span{
     height: 100%;
     object-fit: cover;
 }
-#know_more{
+.know_more{
     position: absolute;
     top: 18rem;
     left: .5rem;
@@ -68,7 +68,7 @@ span{
     cursor: pointer;
     transition: ease-in .3s;
 }
-#know_more:hover{
+.know_more:hover{
     border: 1px solid #FFFBF5;
     background: none;
     color: #fffbf5;

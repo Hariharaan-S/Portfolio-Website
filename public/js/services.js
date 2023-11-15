@@ -13,5 +13,5 @@ function goTo(name) {
 ScrollReveal({distance: '80px',duration: 2000, delay: 200});
 ScrollReveal().reveal('#courses .course_head, #courses table',{origin: 'top'});
 ScrollReveal().reveal('#projects .course_head, #projects table',{origin: 'bottom'});
-ScrollReveal().reveal('#service_head .heading, #service_head .sub-heading, #service_head #know_more',{origin: 'left'});
+ScrollReveal().reveal('#service_head .heading, #service_head .sub-heading, .know_more',{origin: 'left'});
 ScrollReveal().reveal('#skills .course_head, .skill_names',{origin: 'right'});
