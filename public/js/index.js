@@ -75,7 +75,7 @@ var swiper = new Swiper(".mySwiper", {
       Email.send({
         Host : "smtp.elasticemail.com",
         Username : "s.hariharaan.college@gmail.com",
-        Password : "",
+        Password : "9275481017B98AD76B089E7CCDF6A10DAA71",
         From : 's.hariharaan.college@gmail.com',
         To : document.getElementById("email").value,
         Subject : "Successfully Submitted the Query",
