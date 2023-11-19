@@ -3,7 +3,7 @@ const app = express();
 import { mongoose } from "mongoose";
 import bodyParser from "body-parser"
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost:27017/portfolio");
+mongoose.connect(process.env.MONGO_DB_CLIENT);
 const course = new mongoose.Schema({
   name: String,
   completion_date: String,
