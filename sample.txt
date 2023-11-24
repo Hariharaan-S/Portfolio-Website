@@ -1,0 +1,174 @@
+{
+    allQuestionsCount: [
+      { difficulty: 'All', count: 2940 },
+      { difficulty: 'Easy', count: 746 },
+      { difficulty: 'Medium', count: 1549 },
+      { difficulty: 'Hard', count: 645 }
+    ],
+    matchedUser: {
+      username: 'Hariharaan-S',
+      socialAccounts: null,
+      githubUrl: null,
+      contributions: { points: 87, questionCount: 0, testcaseCount: 0 },
+      profile: {
+        realName: '',
+        websites: [],
+        countryName: null,
+        skillTags: [],
+        company: null,
+        school: null,
+        starRating: 2,
+        aboutMe: '',
+        userAvatar: 'https://s3-us-west-1.amazonaws.com/s3-lc-upload/assets/default_avatar.jpg',
+        reputation: 0,
+        ranking: 671866
+      },
+      submissionCalendar: '{"1677196800": 6, "1677801600": 2, "1677974400": 2, "1686268800": 13, "1686441600": 6, "1687910400": 7, "1687996800": 4, "1688428800": 9, "1690243200": 7, "1690329600": 12, "1690416000": 3, "1690502400": 3, "1690588800": 5, "1690675200": 5, "1690761600": 1, "1690848000": 1, "1690934400": 10, "1691020800": 9, "1691107200": 1, "1691193600": 3, "1691280000": 5, "1691366400": 4, "1691539200": 3, "1691625600": 2, "1691712000": 6, "1691798400": 6, "1691971200": 2, "1692144000": 2, "1692316800": 2, "1694390400": 2, "1698537600": 1, "1698624000": 4, "1698710400": 1, "1698796800": 1, "1698883200": 2, "1698969600": 2, "1699228800": 5, "1699920000": 9, "1700179200": 5, "1700265600": 8, "1700352000": 1, "1700438400": 6}',
+      submitStats: { acSubmissionNum: [Array], totalSubmissionNum: [Array] },
+      badges: [],
+      upcomingBadges: [ [Object] ],
+      activeBadge: null
+    },
+    recentSubmissionList: [
+      {
+        title: 'Insert Greatest Common Divisors in Linked List',
+        titleSlug: 'insert-greatest-common-divisors-in-linked-list',
+        timestamp: '1700469479',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Remove Nth Node From End of List',
+        titleSlug: 'remove-nth-node-from-end-of-list',
+        timestamp: '1700468170',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Remove Nth Node From End of List',
+        titleSlug: 'remove-nth-node-from-end-of-list',
+        timestamp: '1700468125',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Remove Nth Node From End of List',
+        titleSlug: 'remove-nth-node-from-end-of-list',
+        timestamp: '1700468071',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Remove Nth Node From End of List',
+        titleSlug: 'remove-nth-node-from-end-of-list',
+        timestamp: '1700466688',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Swap Nodes in Pairs',
+        titleSlug: 'swap-nodes-in-pairs',
+        timestamp: '1700454547',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Can Place Flowers',
+        titleSlug: 'can-place-flowers',
+        timestamp: '1700407900',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Set Matrix Zeroes',
+        titleSlug: 'set-matrix-zeroes',
+        timestamp: '1700329035',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Remove Nth Node From End of List',
+        titleSlug: 'remove-nth-node-from-end-of-list',
+        timestamp: '1700327582',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Add Two Numbers',
+        titleSlug: 'add-two-numbers',
+        timestamp: '1700326821',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Permutations II',
+        titleSlug: 'permutations-ii',
+        timestamp: '1700294711',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Maximum Average Subarray I',
+        titleSlug: 'maximum-average-subarray-i',
+        timestamp: '1700280556',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Maximum Average Subarray I',
+        titleSlug: 'maximum-average-subarray-i',
+        timestamp: '1700280362',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Maximum Average Subarray I',
+        titleSlug: 'maximum-average-subarray-i',
+        timestamp: '1700280341',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Permutation in String',
+        titleSlug: 'permutation-in-string',
+        timestamp: '1700277548',
+        statusDisplay: 'Time Limit Exceeded',
+        lang: 'java'
+      },
+      {
+        title: 'Remove Element',
+        titleSlug: 'remove-element',
+        timestamp: '1700231065',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'All Paths From Source to Target',
+        titleSlug: 'all-paths-from-source-to-target',
+        timestamp: '1700227514',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'All Paths From Source to Target',
+        titleSlug: 'all-paths-from-source-to-target',
+        timestamp: '1700226806',
+        statusDisplay: 'Wrong Answer',
+        lang: 'java'
+      },
+      {
+        title: 'Permutations',
+        titleSlug: 'permutations',
+        timestamp: '1700224496',
+        statusDisplay: 'Accepted',
+        lang: 'java'
+      },
+      {
+        title: 'Permutation in String',
+        titleSlug: 'permutation-in-string',
+        timestamp: '1700207340',
+        statusDisplay: 'Time Limit Exceeded',
+        lang: 'java'
+      }
+    ]
+  }

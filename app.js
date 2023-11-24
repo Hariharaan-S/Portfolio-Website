@@ -1,9 +1,12 @@
 import express from "express";
+import 'dotenv/config';
 const app = express();
 import { mongoose } from "mongoose";
 import bodyParser from "body-parser"
 app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect(process.env.MONGO_DB_CLIENT);
+import { LeetCode } from "leetcode-query";
+
 const course = new mongoose.Schema({
   name: String,
   completion_date: String,
@@ -81,8 +84,18 @@ app.get("/services/:name", async (req, res) => {
   var c_names = services[0].courses;
   var p_names = services[0].projects;
   var s_name = services[0].skillset;
-  res.render("services.ejs", { name: ser_name, content: head_content, c_name: c_names, p_name: p_names,s_name: s_name })
-})
+
+  const leetcode = new LeetCode();
+  const user = await leetcode.user("Hariharaan-S");
+
+  const username = user.matchedUser.username;
+  const submintCount = user.matchedUser.submitStats.acSubmissionNum;
+  const easy = submintCount[1].count;
+  const med = submintCount[2].count;
+  const hd = submintCount[3].count;
+  const recentSub = user.recentSubmissionList;
+  res.render("services.ejs", { name: ser_name, content: head_content, c_name: c_names, p_name: p_names,s_name: s_name,lUsername : username,easy:easy,med:med,hd:hd,lRecent: recentSub })
+});
 
 app.get("/projects/:name",async(req,res) => {
   var ser_name = req.params.name;
@@ -92,7 +105,7 @@ app.get("/projects/:name",async(req,res) => {
     const temp = ser_name.split("_");
     new_name = temp[0]+temp[1];
     ser_name = new_name;
-  }
+  } 
   const projects = await Project.find({ project: ser_name });
   const content = projects[0].content;
   const about = projects[0].about;
@@ -105,5 +118,5 @@ app.get("/projects/:name",async(req,res) => {
 const port = process.env.PORT || 5000;
 
 app.listen(5000, function () {
-  console.log('Server is running');
+  console.log('Server is running ' + port);
 })
