@@ -225,7 +225,7 @@
                 <input type="text" placeholder="Email Subject" name="subject" id="subject">
             </div>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" onclick="sendMail()" class="btn">
+            <input type="submit" value="Send Message" id="submit_btn" class="btn">
             </form>
         </div>
     </section>
@@ -249,6 +249,8 @@
     <!-- Send Mail using SMTP.js -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!-- ------------- -->
+    <!-- Sweetalert2 for mesage dialog box -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js\\index.js"></script>
 </body>
 

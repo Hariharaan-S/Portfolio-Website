@@ -70,7 +70,7 @@ app.get("/send",(req,res) =>{
   });
   obj.save();
 
-  res.send("true");
+  res.json({status: 200});
 })
 
 app.get("/", function (req, res) {
