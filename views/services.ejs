@@ -7,6 +7,7 @@
     <title>
         Services || <%= name %>
     </title>
+    <link rel="shortcut icon" href="images\favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c1b3701aff.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="css//services.css">
@@ -132,6 +133,49 @@
             </table>
             <% } %>
     </section>
+    
+    <% if(name == "Competitive Coder"){ %>
+        <section id="leetcodeSection">
+            <div class="leetcode">
+                <h2><span>LeetCode</span> Profile</h2>
+                <div class="lt-wrapper">
+                    <div class="lt-item lt-username">
+                        <p>User</p>
+                        <h4><%= lUsername %></h4>
+                    </div>
+                    <div class="lt-item lt-easy">
+                        <p>Easy</p>
+                        <h3><%= easy %></h3>
+                    </div>
+                    <div class="lt-item lt-medium">
+                        <p>Medium</p>
+                        <h3><%= med %></h3>
+                    </div>
+                    <div class="lt-item lt-hard">
+                        <p>Hard</p>
+                        <h3><%= hd %></h3>
+                    </div>
+                </div>
+                <h2>Recent</h2>
+                <table cellpadding="15">
+                    <thead>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Language</th>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0;i<lRecent.length;i++){ %>
+                            <tr>
+                                <td><%= lRecent[i].title %></td>
+                                <td><%= lRecent[i].statusDisplay %></td>
+                                <td><%= lRecent[i].lang %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    <% } %>
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/services.js"></script>

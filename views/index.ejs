@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi! I'm Hari</title>
     <!-- swiper css -->
+    <link rel="shortcut icon" href="images\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://kit.fontawesome.com/c1b3701aff.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -137,7 +138,7 @@
                 <img src="images\\Social_Media_Monitoring_Tool.png" alt="">
 
                 <div class="portfolio-layer social_media">
-                    <h4>Social Media Monitoring Tool</h4>
+                    <h4>Social Media Monitoring</h4>
                     <p>Safeguarding online integrity by identifying and
                         reporting false and violation-inducing messages, making social media a safer place.</p>
 
@@ -177,7 +178,7 @@
             <div class="testimonial-box mySwiper">
                 <div class="testimonial-content swiper-wrapper">
                     <div class="testimonial-slide swiper-slide">
-                        <img src="images\\SIH 2022.png" alt="">
+                        <img width="80%" height="80%" src="images\\SIH 2022.png" alt="">
                         <h3>Finalist in SIH 2022</h3>
                         <p>Being a finalist in SH 2022 was a transformative journey. The intense competition pushed me
                             to excel, fostering resilience and determination. Interacting with like-minded individuals
@@ -224,7 +225,7 @@
                 <input type="text" placeholder="Email Subject" name="subject" id="subject">
             </div>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" onclick="sendMail()" class="btn">
+            <input type="submit" value="Send Message" id="submit_btn" class="btn">
             </form>
         </div>
     </section>
@@ -248,6 +249,8 @@
     <!-- Send Mail using SMTP.js -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!-- ------------- -->
+    <!-- Sweetalert2 for mesage dialog box -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js\\index.js"></script>
 </body>
 

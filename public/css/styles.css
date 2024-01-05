@@ -449,7 +449,7 @@ span{
     padding: 1rem;
     border-radius: 2rem;
     overflow: hidden;
-    height: 50rem;
+    height: 57rem;
 }
 
 .testimonial-container .testimonial-slide{
@@ -464,8 +464,8 @@ span{
     border-bottom: .8rem solid var(--main-color);
 }
 .testimonial-slide img{
-    width: 64rem;
-    height: 54rem;
+    width: 74rem;
+    height: 30rem;
     object-fit: cover;
     border-radius: 10px;
     border: .5rem solid var(--bg-color);
@@ -571,6 +571,9 @@ span{
     .about{
         position: relative;
         margin-top: 7rem;
+    }
+    .portfolio-box .portfolio-layer{
+        padding: 4px;
     }
 }
 
@@ -842,11 +845,24 @@ span{
         width: 100%;
     }
     
+    
 }
 
 @media(max-width: 365px){
     .about-img img{
         width: 90vw;
+    }
+    .testimonial-wrapper .testimonial-box{
+        height: 47rem;
+    }
+
+    .testimonial-wrapper .testimonial-box{
+        height: 60rem;
+    }
+
+    .testimonial-slide img{
+        width: 38rem;
+        height: 20rem;
     }
     .footer {
         flex-direction: column-reverse;

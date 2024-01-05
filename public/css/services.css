@@ -128,7 +128,7 @@ td{
 #skills{
     position: relative;
     margin-top: 5rem;
-    max-width: 80%;
+    width: 80%;
 }
 .skill_part{
     width: 100%;
@@ -183,5 +183,99 @@ td{
     }
     to{
         width: 100%;
+    }
+}
+
+.leetcode h2{
+    position: relative;
+    margin-left: 2rem;
+}
+
+.lt-wrapper{
+    position: relative;
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+.leetcode table{
+    position: relative;
+    margin-top: 10px;
+    width: 90%;
+}
+.leetcode table th:nth-child(2){
+    width: 20%;
+}
+
+.lt-wrapper .lt-item:nth-child(2){
+    padding-left: 22%;
+}
+/* BREAKPOINTS */
+
+@media(max-width: 1300px){
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width: 991px){
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #skills{
+        width: 90%;
+    }
+    #courses, #projects{
+        width: 90%;
+    }
+}
+
+@media(max-width: 768px){
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #skills{
+        width: 90%;
+    }
+    #courses, #projects{
+        width: 90%;
+    }
+}
+
+@media (max-width: 617px){
+    html{
+        font-size: 50%;
+    }
+    .heading{
+        top: 3rem;
+    }
+    .sub-heading{
+        top: 11rem;
+    }
+    #skills{
+        width: 100%;
+    }
+    #courses, #projects{
+        width: 100%;
+    }
+    #courses table, #projects table{
+        width: 95%;
+    }
+}
+
+@media(max-width: 365px){
+    .heading{
+        font-size: 37px;
+        top: 2rem;
+    }
+    .sub-heading{
+        top: 9rem;
     }
 }
