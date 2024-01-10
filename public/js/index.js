@@ -88,3 +88,7 @@ ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
       );
     }
   }
+
+  var date = Date.now()
+  var year = date.getFullYear();
+  document.querySelector('.footer-text').innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`
