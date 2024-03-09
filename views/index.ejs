@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="images\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://kit.fontawesome.com/c1b3701aff.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css//styles.css">
 </head>
 
@@ -18,18 +18,19 @@
     <!-- Header design-->
     <header class="header">
         <a href="/" class="logo">PortFolio</a>
-
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="bx bx-moon" id="darkMode-icon"><i class="fa-solid fa-moon"></i></div>
-
-        <div class="fa-light fa-bars" id="menu-icon"></div>
+        <i class='bx bx-menu' id="menu-icon"></i>
     </header>
+    <div class="navbar-items-container" id="navbar-items-container">
+        <div class="navbar">
+            <a onclick="toggleMenu()" href="#home">Home</a>
+            <a onclick="toggleMenu()" href="#about">About</a>
+            <a onclick="toggleMenu()" href="#experience">Experience</a>
+            <a onclick="toggleMenu()" href="#services">Services</a>
+            <a onclick="toggleMenu()" href="#portfolio">Projects</a>
+            <a onclick="toggleMenu()" href="#achievements">Achievements</a>
+            <a onclick="toggleMenu()" href="#contact">Contact</a>
+        </div>
+    </div>
 
     <section class="home" id="home">
         <div class="home-content">
@@ -125,17 +126,21 @@
     </section>
 
     <!-- Experience Section Design-->
-    <section class="services" id="services">
+    <section class="experience" id="experience">
         <h2 class="heading">My <span>Experience</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Web Development.</h3>
-                <p>Involves crafting websites and web applications through front-end design, back-end
-                    programming, and technology integration. Employ HTML, CSS, JavaScript, and server-side
-                    languages to create user-friendly, responsive online experiences.</p>
-                <a href="/services/Web Development" class="btn">Read More</a>
+        <div class="experience-container">
+            <div class="experience-box">
+                <img class="intern_logo" src="images\\intern1_logo.jpeg" alt="" srcset="">
+                <div class="experience-description">
+                    <h3>Intern - Backend, Microservices and Frontend Development</h3>
+                    <p>ProjectSense Org, Dec 2023 - Jan 2024</p>
+                    <p>I had a rewarding experience serving as a Full-Stack Developer Intern at the prestigious company
+                        'ProjectSense.' During this time, I immersed myself in learning a diverse range of web
+                        technologies and successfully contributed to the development of a product that met specified
+                        requirements.</p>
+                </div>
             </div>
+        </div>
     </section>
 
     <!-- service section design -->
@@ -167,6 +172,7 @@
                     mastering advanced Java development to tackle challenges.</p>
                 <a href="/services/Competitive Coder" class="btn">Read More</a>
             </div>
+        </div>
     </section>
 
     <!-- portfolio section design -->
