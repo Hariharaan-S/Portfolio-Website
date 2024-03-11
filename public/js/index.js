@@ -2,14 +2,18 @@
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let menuBar = document.getElementById("navbar-items-container");
+let darken = document.getElementById("darken");
+
 
 menuIcon.onclick = () => {
   menuBar.classList.toggle("display-menu");
+  darken.classList.toggle("darken-the-bg");
 };
 
 const toggleMenu = () => {
   if (menuBar.classList.contains("display-menu")) {
     menuBar.classList.remove("display-menu");
+    darken.classList.toggle("darken-the-bg");
   }
 };
 
