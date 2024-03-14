@@ -165,7 +165,7 @@ section {
   align-items: center;
 }
 .home .home-content {
-  max-width: 44rem;
+  max-width: 50rem;
 }
 .home-content h3 {
   font-size: 3.2rem;
@@ -325,11 +325,22 @@ section {
   text-align: center;
   color: var(--white-color);
 }
+.work_img{
+  position: absolute;
+  width: 25%;
+  height: 52vh;
+  border: 5px solid var(--main-color);
+  background: var(--white-color);
+  border-radius: 50%;
+  margin-left: 780px;
+  margin-bottom: 40px;
+}
 .work_img img {
   width: 70%;
-  height: 70vh;
-  position: relative;
-  margin-left: 350px;
+  height: 60vh;
+  position: absolute;
+  margin-top: -19px;
+  margin-left: 50px;
   pointer-events: none;
 }
 
