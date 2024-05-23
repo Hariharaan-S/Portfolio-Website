@@ -5,6 +5,7 @@ let menuBar = document.getElementById("navbar-items-container");
 let darken = document.getElementById("darken");
 
 
+/*================Toggle the Background and Menu Icon=====================*/
 menuIcon.onclick = () => {
   menuBar.classList.toggle("display-menu");
   darken.classList.toggle("darken-the-bg");
@@ -16,6 +17,14 @@ const toggleMenu = () => {
     darken.classList.toggle("darken-the-bg");
   }
 };
+/*================Toggle the Background and Menu Icon when click outside=====================*/
+// function closeMenu(event) {
+//   if (!menuBar.contains(event.target) && event.target !== menuIcon) {
+//       menuBar.classList.remove('active');
+//   }
+// }
+
+// document.addEventListener('click', closeMenu);
 
 /*============scroll section active link================*/
 let sections = document.querySelectorAll("section");

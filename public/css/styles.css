@@ -50,7 +50,7 @@ body {
   background-color: transparent;
   display: flex;
   align-items: center;
-  z-index: 100;
+  z-index: 103;
   transition: 0.5s;
 }
 .header.sticky {
@@ -70,7 +70,6 @@ body {
   width: 50%;
   height: 80vh;
   position: fixed;
-  margin-top: 9rem;
   margin-left: 49%;
   transition: 0.5s;
   border-radius: 25px;
@@ -83,14 +82,15 @@ body {
 }
 .navbar-items-container .navbar {
   background-color: var(--bg-color);
+  position: absolute;
   width: 100%;
-  height: 80vh;
+  height: max-content;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   box-shadow: 0 0.1rem 1rem var(--shadow-color);
   border-radius: 25px;
-  bottom: 0;
+  top: 8rem;
   transition: 0.5s ease;
 }
 
@@ -99,8 +99,15 @@ body {
   font-size: 1.7rem;
   color: var(--main-color);
   font-weight: 500;
-  padding: 1.5rem 3rem;
   transition: 0.5s ease;
+  padding: 1.5rem 2.5rem;
+}
+.navbar h1{
+  font-size: 2rem;
+  color: var(--main-color);
+  font-weight: 800;
+  position: relative;
+  padding: 1.5rem 2.5rem;
 }
 .navbar a:nth-child(1){
   border-top-right-radius: 25px;
@@ -149,7 +156,6 @@ body {
   margin-top: -0.5rem;
   cursor: pointer;
   color: var(--white-color);
-  z-index: 103;
 }
 #menu-icon.change-color {
   color: var(--main-color);
@@ -332,13 +338,13 @@ section {
   border: 5px solid var(--main-color);
   background: var(--white-color);
   border-radius: 50%;
-  margin-left: 780px;
+  margin-left: 990px;
   margin-bottom: 40px;
 }
 .work_img img {
   width: 70%;
   height: 60vh;
-  position: absolute;
+  position: relative;
   margin-top: -19px;
   margin-left: 50px;
   pointer-events: none;
