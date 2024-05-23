@@ -25,47 +25,50 @@
     </section>
 
     <section id="description">
-        <div class="desc-wrapper">
+        <div class="desc-container">
+            <div class="desc-wrapper">
 
-            <div class="about_img">
-                <img width="350px" height="350px" src="images/about1.png" alt="" srcset="">
-            </div>
-            <div class="desc-part about">
-                <div class="heading">
-                    <span>About</span>
-                    <%= name %>
+                <div class="about_img">
+                    <img width="350px" height="350px" src="images/about1.png" alt="" srcset="">
                 </div>
-                <div class="about_desc">
-                    <%= about %>
-                </div>
-            </div>
-        </div>
-        <div class="desc-wrapper">
-            <div class="about_img">
-                <img width="350px" height="350px" src="images/about2.png" alt="" srcset="">
-            </div>
-            <div class="desc-part techstack">
-                <div class="heading">
-                    <span>Tech</span> Stack
-                </div>
-                <div class="about_desc">
-                    <%= techstack %>
+                <div class="desc-part about">
+                    <div class="heading">
+                        <span>About</span>
+                        <%= name %>
+                    </div>
+                    <div class="about_desc">
+                        <%= about %>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="desc-wrapper">
+            <div class="desc-wrapper">
+                <div class="about_img">
+                    <img width="350px" height="350px" src="images/about2.png" alt="" srcset="">
+                </div>
+                <div class="desc-part techstack">
+                    <div class="heading">
+                        <span>Tech</span> Stack
+                    </div>
+                    <div class="about_desc">
+                        <%= techstack %>
+                    </div>
+                </div>
+            </div>
+            <div class="desc-wrapper">
 
-            <div class="about_img">
-                <img width="350px" height="350px" src="images/about3.png" alt="" srcset="">
-                <img width="300px" height="300px" src="images/key_features.png" alt="" srcset="">
-                <img width="350px" height="350px" src="images/key_features2.jpg" alt="" srcset="">
-            </div>
-            <div class="desc-part key-features">
-                <div class="heading">
-                    <span>Key </span>Features
+                <div class="about_img">
+                    <img width="350px" height="350px" src="images/about3.png" alt="" srcset="">
+                    <img width="300px" height="300px" src="images/key_features.png" alt="" srcset="">
+                    <% if(name !=='Social Media Monitoring Tool' ){ %> <img width="350px" height="350px"
+                            src="images/key_features2.jpg" alt="" srcset="">
+                        <% } %>
                 </div>
-                <div class="about_desc">
-                    <% for(var i=0;i<key.length;i++){ %>
+                <div class="desc-part key-features">
+                    <div class="heading">
+                        <span>Key </span>Features
+                    </div>
+                    <div class="about_desc">
+                        <% for(var i=0;i<key.length;i++){ %>
                             <% if(key[i].includes(":")){ %>
                                 <strong>
                                     <%= key[i] %>
@@ -73,20 +76,23 @@
                                 <% } %>
                                     <% if(!key[i].includes(":")){ %>
                                         <%= key[i] %><br>
-                                            <% } %>
-                                                <% } %>
+                                    <% } %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="video-images">
+                <div class="heading">
+                    <span>Demo</span> Video and <span>Screen</span>shots
                 </div>
             </div>
         </div>
 
-        <div class="desc-part video-images">
-            <div class="heading">
-                <span>Demo</span> Video and <span>Screen</span>shots
-            </div>
-        </div>
-
     </section>
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js\projects.js"></script>
+
 </body>
 
 </html>

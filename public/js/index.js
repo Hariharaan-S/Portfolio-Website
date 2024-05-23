@@ -1,10 +1,20 @@
 /*============menu icon navbar================*/
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
+let menuBar = document.getElementById("navbar-items-container");
+let darken = document.getElementById("darken");
+
 
 menuIcon.onclick = () => {
-  menuIcon.classList.toggle("fa-solid fa-xmark");
-  navbar.classList.toggle("active");
+  menuBar.classList.toggle("display-menu");
+  darken.classList.toggle("darken-the-bg");
+};
+
+const toggleMenu = () => {
+  if (menuBar.classList.contains("display-menu")) {
+    menuBar.classList.remove("display-menu");
+    darken.classList.toggle("darken-the-bg");
+  }
 };
 
 /*============scroll section active link================*/
@@ -30,9 +40,9 @@ window.onscroll = () => {
   /*============sticky navbar================*/
   let header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 100);
+  menuIcon.classList.toggle("change-color", window.scrollY > 100);
 
   /*============remove menu icon navbar when click navbar link (scroll)================*/
-  menuIcon.classList.remove("fa-solid fa-xmark");
   navbar.classList.remove("active");
 };
 /*============swiper================*/
@@ -51,17 +61,11 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-/*============dark mode================*/
-let darkMode = document.querySelector("#darkMode-icon");
-
-darkMode.onclick = () => {
-  darkMode.classList.toggle("bx-sun");
-  document.body.classList.toggle("dark-mode");
-};
-
 /*============Scroll Reveal================*/
 ScrollReveal({ distance: "80px", duration: 2000, delay: 200 });
-ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
+ScrollReveal().reveal(".home-content, .heading, .experience", {
+  origin: "top",
+});
 ScrollReveal().reveal(
   ".home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact .form",
   { origin: "bottom" }
@@ -71,24 +75,33 @@ ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
   origin: "right",
 });
 
-  /*==============Send Mail=====================*/
-  async function sendMail(){
-    var success = await fetch("/send?name="+document.getElementById("name").value+"&email="+document.getElementById("email").value+"&phone="+document.getElementById("phone").value+"&message="+document.getElementById("message").value);
-    if(success.ok){
-      Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "s.hariharaan2003@gmail.com",
-        Password : "",
-        From : 's.hariharaan2003@gmail.com',
-        To : document.getElementById("email").value,
-        Subject : "Successfully Submitted the Query",
-        Body : "Thank you for reaching us. We will see to the query and turn in within 2 or 3 working days."
-      }).then(
-        window.location.href="/"
-      );
-    }
+/*==============Send Mail=====================*/
+async function sendMail() {
+  var success = await fetch(
+    "/send?name=" +
+      document.getElementById("name").value +
+      "&email=" +
+      document.getElementById("email").value +
+      "&phone=" +
+      document.getElementById("phone").value +
+      "&message=" +
+      document.getElementById("message").value
+  );
+  if (success.ok) {
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "s.hariharaan2003@gmail.com",
+      Password: "",
+      From: "s.hariharaan2003@gmail.com",
+      To: document.getElementById("email").value,
+      Subject: "Successfully Submitted the Query",
+      Body: "Thank you for reaching us. We will see to the query and turn in within 2 or 3 working days.",
+    }).then((window.location.href = "/"));
   }
+}
 
-  var date = new Date()
-  var year = date.getFullYear();
-  document.querySelector('.footer-text').innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`
+var date = new Date();
+var year = date.getFullYear();
+document.querySelector(
+  ".footer-text"
+).innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`;
