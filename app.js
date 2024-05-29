@@ -115,7 +115,7 @@ app.get("/projects/:name",async(req,res) => {
   res.render('projects.ejs',{name: ser_name,image_name: t,content: content, about:about, techstack: techstack, key: temp_var});
 })
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 app.listen(5000, function () {
   console.log('Server is running ' + port);
