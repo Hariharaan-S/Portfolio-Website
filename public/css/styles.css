@@ -482,7 +482,7 @@ span {
 }
 
 .portfolio {
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 .portfolio h2 {
   margin-bottom: 4rem;
@@ -573,12 +573,12 @@ span {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding: 5rem 1rem;
+  padding: 0 1rem;
 }
 .testimonial-container .testimonial-wrapper {
   position: relative;
   width: 100%;
-  padding: 5rem;
+  padding: 2rem 5rem;
 }
 
 .testimonial-wrapper .testimonial-box {
