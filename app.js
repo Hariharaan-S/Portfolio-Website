@@ -6,8 +6,6 @@ import bodyParser from "body-parser"
 app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(process.env.MONGO_DB_CLIENT || "mongodb+srv://shariharaan2003:uhcr28rkv64ygUYW@portfolio.b2p6ba0.mongodb.net/portfolio");
 import { LeetCode } from "leetcode-query";
-import serverless from "serverless-http";
-const router = express.Router();
 
 const course = new mongoose.Schema({
   name: String,
@@ -59,7 +57,7 @@ const Service = mongoose.model("Service", serviceSchema);
 const Contact = mongoose.model("Contact", contactSchema);
 
 ////////////////////////////// SENDING MAIL /////////////////////////////////////////
-router.get("/send", (req, res) => {
+app.get("/send", (req, res) => {
   const name = req.query.name;
   const email = req.query.email;
   const phone = req.query.phone;
@@ -75,11 +73,11 @@ router.get("/send", (req, res) => {
   res.json({ status: 200 });
 })
 
-router.get("/", function (req, res) {
+app.get("/", function (req, res) {
   res.render("index.ejs");
 });
 
-router.get("/services/:name", async (req, res) => {
+app.get("/services/:name", async (req, res) => {
   const ser_name = req.params.name;
   const services = await Service.find({ service_name: ser_name });
   var head_content = services[0].content;
@@ -99,7 +97,7 @@ router.get("/services/:name", async (req, res) => {
   res.render("services.ejs", { name: ser_name, content: head_content, c_name: c_names, p_name: p_names, s_name: s_name, lUsername: username, easy: easy, med: med, hd: hd, lRecent: recentSub })
 });
 
-router.get("/projects/:name", async (req, res) => {
+app.get("/projects/:name", async (req, res) => {
   var ser_name = req.params.name;
   var t = ser_name;
   var new_name = "";
