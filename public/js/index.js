@@ -88,23 +88,23 @@ ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
 async function sendMail() {
   var success = await fetch(
     "/send?name=" +
-      document.getElementById("name").value +
-      "&email=" +
-      document.getElementById("email").value +
-      "&phone=" +
-      document.getElementById("phone").value +
-      "&message=" +
-      document.getElementById("message").value
+    document.getElementById("name").value +
+    "&email=" +
+    document.getElementById("email").value +
+    "&phone=" +
+    document.getElementById("phone").value +
+    "&message=" +
+    document.getElementById("message").value
   );
-  if (success.ok) {
+  if (success.status === 200) {
     Email.send({
       Host: "smtp.elasticemail.com",
-      Username: "s.hariharaan2003@gmail.com",
-      Password: "",
-      From: "s.hariharaan2003@gmail.com",
+      Username: "s.hariharaan.college@gmail.com",
+      Password: "86DA580AD5A5A30A21005D01D81E2ADA95A6",
+      From: "s.hariharaan.college@gmail.com",
       To: document.getElementById("email").value,
       Subject: "Successfully Submitted the Query",
-      Body: "Thank you for reaching us. We will see to the query and turn in within 2 or 3 working days.",
+      Body: "Thank you for reaching me. I will see to the query and turn in within 2 or 3 working days.",
     }).then((window.location.href = "/"));
   }
 }
