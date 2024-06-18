@@ -59,9 +59,6 @@
                 <div class="about_img">
                     <img width="350px" height="350px" src="images/about3.png" alt="" srcset="">
                     <img width="300px" height="300px" src="images/key_features.png" alt="" srcset="">
-                    <% if(name !=='Social Media Monitoring Tool' ){ %> <img width="350px" height="350px"
-                            src="images/key_features2.jpg" alt="" srcset="">
-                        <% } %>
                 </div>
                 <div class="desc-part key-features">
                     <div class="heading">
@@ -76,8 +73,8 @@
                                 <% } %>
                                     <% if(!key[i].includes(":")){ %>
                                         <%= key[i] %><br>
-                                    <% } %>
-                        <% } %>
+                                            <% } %>
+                                                <% } %>
                     </div>
                 </div>
             </div>

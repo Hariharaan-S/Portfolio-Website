@@ -48,13 +48,24 @@ const projectSchema = new mongoose.Schema({
   key_features: String
 });
 
-const Project = new mongoose.model("Project", projectSchema);
+
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 app.use('/services', express.static('public'));
 app.use('/projects', express.static('public'));
 const Service = mongoose.model("Service", serviceSchema);
 const Contact = mongoose.model("Contact", contactSchema);
+const Project = new mongoose.model("Project", projectSchema);
+
+// const new_project = new Project({
+//   project: "TaskFlow - A Task Management App",
+//   content: "a user-friendly task management app allowing users to effortlessly create, edit, and delete tasks, thus enhancing productivity by eliminating distractions.",
+//   about: "TaskFlow is a minimalist task management application developed to provide a simple yet powerful tool for organizing and managing tasks. The application is designed with a focus on usability and efficiency, ensuring that users can quickly add, modify, and remove tasks with ease. Whether you need to manage personal to-dos, work-related tasks, or any other type of task, TaskFlow provides a clutter-free interface that makes task management straightforward and effective.",
+//   techstack: "MongoDB: For the database, storing task details and user information. Express.js: As the server-side framework, handling API requests and responses. React: For the front-end, creating an interactive and responsive user interface. Node.js: As the runtime environment, allowing server-side JavaScript execution.",
+//   key_features: "Task Creation:\n Easily add new tasks with a simple and intuitive interface.\n Task Editing:\n Modify existing tasks to update their details and status.\n Task Deletion:\n Remove tasks that are no longer needed to keep your task list organized.\n Minimalist Design:\n Focus on your tasks with a clean and distraction-free user interface.\n Real-time Updates:\n Changes to tasks are reflected in real-time, ensuring your task list is always up to date.\n Responsive Design:\n Access TaskFlow from any device, with a design that adapts to different screen sizes\n. User Authentication:\n Secure login and registration system to protect user data and ensure privacy.\n Filter and Search:\n Quickly find tasks using filtering and search functionalities."
+// })
+
+// new_project.save();
 
 ////////////////////////////// SENDING MAIL /////////////////////////////////////////
 app.get("/send", (req, res) => {
