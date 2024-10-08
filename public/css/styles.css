@@ -388,16 +388,10 @@ span {
   color: var(--main-color);
 }
 
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-}
 
 .about-content {
   position: relative;
-  margin-top: 15rem;
+  margin-top: 5rem;
 }
 
 .about-img img {
@@ -431,13 +425,14 @@ span {
   padding-bottom: 7rem;
 }
 
-.experience,
 .experience-container {
+  position: relative;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  overflow: hidden;
 }
 
 .experience-container .experience-box {
@@ -479,7 +474,7 @@ span {
 }
 
 .services {
-  min-height: auto;
+  min-height: 100vh;
   padding-bottom: 7rem;
 }
 
@@ -496,7 +491,8 @@ span {
 }
 
 .services-container .services-box {
-  flex: 1 1 30rem;
+  overflow: hidden;
+  flex: 1 1 28rem;
   background: var(--bg-color);
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
@@ -510,10 +506,12 @@ span {
 .services-container .services-box:hover {
   box-shadow: 0 0.1rem 2rem var(--shadow-color);
   transform: scale(1.02);
+  overflow: hidden;
 }
 
 .services-box i {
   font-size: 7rem;
+  overflow: hidden;
   color: var(--main-color);
 }
 
@@ -538,6 +536,10 @@ span {
 
 .portfolio h2 {
   margin-bottom: 4rem;
+}
+
+.portfolio-container{
+  padding: 3rem;
 }
 
 .portfolio .portfolio-container {
@@ -717,7 +719,8 @@ span {
   max-width: 70rem;
   margin: 1rem auto;
   text-align: center;
-  margin-bottom: 3rem;
+  padding: 0 0 2rem 0;
+  /* margin-bottom: 3rem; */
 }
 
 .contact .form .input-box {
@@ -751,7 +754,7 @@ span {
   cursor: pointer;
 }
 
-.footer {
+.footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -759,6 +762,7 @@ span {
   padding: 2rem 7%;
   background: var(--main-color);
 }
+
 
 .footer-text p {
   font-size: 1.6rem;
@@ -792,20 +796,25 @@ span {
   }
 
   section {
-    min-height: 100%;
+    height: 100vh;
   }
 
   .home .home-content {
     max-width: 40rem;
     position: relative;
+    margin-top: -2rem;
   }
 
   .profession-container {
     position: absolute;
     height: 60rem;
   }
+  .profession i, .profession h3, section, .about-content h2{
+    overflow: hidden;
+  }
 
   .home-content h3 {
+    overflow: hidden;
     font-size: 2.7rem;
     line-height: 1;
   }
@@ -839,15 +848,56 @@ span {
 
   .work_img {
     position: absolute;
-    width: 18%;
-    height: 30vh;
-    top: 35%;
-    right: 18%;
+    width: 27%;
+    height: auto;
+    top: 20%;
+    right: 7%;
   }
 
   .work_img img {
     position: relative;
-    margin-top: -52%;
+  }
+
+  .experience-container{
+    padding: 2rem;
+  }
+
+  .experience .experience-description{
+    max-width: 80%;
+  }
+  .experience-container .experience-box:hover{
+    transform: scale(1.02);
+    overflow-y: hidden;
+  }
+
+  .services{
+    padding: 3rem 7rem;
+  }
+  .services-container{
+    padding: 1rem;
+  }
+  .services-container .services-box:first-child{
+    min-height: 47rem;
+  }
+  .portfolio{
+    padding: 3rem;
+    min-height: max-content;
+  }
+  .portfolio-container{
+    padding: 3rem;
+  }
+  .testimonial-container{
+    min-height: max-content;
+  }
+
+  .testimonial-slide{
+    min-height: 10%;
+  }
+  .contact{
+    padding: 0 0 2rem 0;
+  }
+  .footer{
+    max-height: 5%;
   }
 }
 
