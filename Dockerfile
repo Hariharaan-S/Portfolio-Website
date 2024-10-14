@@ -1,13 +1,20 @@
-FROM node:12.18.1
+# Use an official Node.js image as the base
+FROM node:latest
 
+# Set the working directory inside the container
 WORKDIR /
 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
+# Copy package.json and package-lock.json to install dependencies
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
-CMD [ "node", "app.js" ]
+# Expose the port on which the app will run
+EXPOSE 5000
 
+# Start the app
+CMD [ "npm", "start" ]

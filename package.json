@@ -13,8 +13,8 @@
   "name": "portfolio-website",
   "description": "This is my portfolio website which describes my skillset and other qualifications. \r (This site is under construction)",
   "version": "1.0.0",
-  "main": "app.js",
   "type": "module",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
