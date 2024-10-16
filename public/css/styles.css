@@ -796,13 +796,26 @@ span {
   }
 
   section {
-    height: 100vh;
+    height: 100%;
+  }
+
+  .navbar-items-container {
+    width: 100vh;
+    height: 120%;
+  }
+  .navbar-items-container .navbar{
+    row-gap: .5rem;
   }
 
   .home .home-content {
     max-width: 40rem;
+    height: 100vh;
     position: relative;
-    margin-top: -2rem;
+    margin-top: -3rem;
+  }
+  .home-content{
+    max-width: auto;
+    padding-top: 12rem;
   }
 
   .profession-container {
@@ -815,16 +828,16 @@ span {
 
   .home-content h3 {
     overflow: hidden;
-    font-size: 2.7rem;
+    font-size: 3.7rem;
     line-height: 1;
   }
 
   .home-content h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 
   .home-content p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .navbar-items-container {
@@ -839,7 +852,6 @@ span {
 
   .about {
     position: relative;
-    margin-top: 7rem;
   }
 
   .portfolio-box .portfolio-layer {
@@ -871,7 +883,7 @@ span {
   }
 
   .services{
-    padding: 3rem 7rem;
+    padding: 25rem 7rem;
   }
   .services-container{
     padding: 1rem;
@@ -880,7 +892,7 @@ span {
     min-height: 47rem;
   }
   .portfolio{
-    padding: 3rem;
+    padding: 15rem 7rem;
     min-height: max-content;
   }
   .portfolio-container{
@@ -893,11 +905,25 @@ span {
   .testimonial-slide{
     min-height: 10%;
   }
+  .testimonial-slide h3, .testimonial-slide p{
+    width: fit-content;
+    height:fit-content;
+
+  }
   .contact{
-    padding: 0 0 2rem 0;
+    padding: 15rem 7rem;
   }
   .footer{
     max-height: 5%;
+  }
+  
+  .footer-iconTop a:hover {
+    outline-color: var(--white-color);
+  }
+  
+  .footer-iconTop a i {
+    font-size: 2.2rem;
+    color: #333;
   }
 }
 
@@ -983,6 +1009,7 @@ span {
 @media (max-width: 768px) {
   #menu-icon {
     display: block;
+    color: var(--main-color);
   }
 
   #darkMode-icon {
@@ -992,12 +1019,21 @@ span {
     color: var(--text-color);
     margin-bottom: 0.1rem;
   }
+  .navbar-items-container{
+    width: 70%;
+    height: 100%;
+    margin-left: 12rem;
+    position: absolute;
+    overflow-y: hidden;
+    row-gap: .3rem;
+  }
 
   .navbar {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
+    height: 100%;
     padding: 1rem 3%;
     background: var(--bg-color);
     border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
@@ -1030,7 +1066,7 @@ span {
   }
 
   .home {
-    padding: 0 3% 23rem;
+    padding: 0 2% 8rem;
     justify-content: center;
     text-align: center;
   }
@@ -1055,10 +1091,12 @@ span {
 
   .home .profession-container .profession-box {
     position: fixed;
-    top: 60%;
+    top: 20%;
     left: 0;
     border-radius: 0;
     width: 100%;
+    height: 100%;
+    display: none;
   }
 
   .home .profession-box .profession {
@@ -1106,6 +1144,7 @@ span {
   .about {
     flex-direction: column-reverse;
     text-align: center;
+    padding: 9rem 2rem;
   }
 
   .about-content h2 {
@@ -1115,6 +1154,22 @@ span {
   .about-img img {
     width: 70vw;
     margin-top: -2rem;
+  }
+  
+
+  .experience, .experience-container .experience-box{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .experience-container .experience-box .experience-description p:nth-child(3){
+    text-align: justify;
+  }
+
+  .experience-description{
+    padding: 0;
   }
 
   .services h2,
@@ -1137,6 +1192,17 @@ span {
   .testimonial-box .swiper-button-next,
   .testimonial-box .swiper-button-prev {
     display: none;
+  }
+
+  .contact{
+    padding: 18rem 2rem;
+  }
+
+  .footer{
+    position: relative;
+    display: flex;
+    top: -18rem;
+    padding: 0;
   }
 }
 
@@ -1181,6 +1247,15 @@ span {
 }
 
 @media (max-width: 365px) {
+  #meno-icon{
+    color: var(--main-color);
+  }
+  .home .home-content{
+    margin-top: 8rem;
+  }
+  .work_img{
+    display: none;
+  }
   .about-img img {
     width: 90vw;
   }
