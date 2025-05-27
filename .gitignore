@@ -2,7 +2,6 @@ node_modules/
 .env
 .env.example
 package-lock.json
-*.mp4
 
 # Local Netlify folder
 .netlify
