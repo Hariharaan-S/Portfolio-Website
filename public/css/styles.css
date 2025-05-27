@@ -11,19 +11,30 @@
   font-family: "Poppins", sans-serif;
 }
 
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
 :root {
-  --bg-color: #fdfdff;
-  --text-color: #333;
+  --bg-color: #0F0E0E;
+  --text-color: #fdfdfd;
   --main-color: #754ef9;
   --white-color: #fdfdfd;
+  --box-color: #1E201E;
   --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-.darkmode {
+/* .darkmode {
   --bg-color: #0b061f;
   --text-color: #fdfdfd;
   --shadow-color: rgba(0, 0, 0, 0.7);
-}
+} */
 
 html {
   font-size: 62.5%;
@@ -49,6 +60,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  height: auto;
   padding: 2rem 1%;
   background-color: transparent;
   display: flex;
@@ -58,7 +70,7 @@ body {
 }
 
 .header.sticky {
-  background: var(--bg-color);
+  background: var(--box-color);
   box-shadow: 0 0.1rem 1rem var(--shadow-color);
 }
 
@@ -71,33 +83,17 @@ body {
   cursor: pointer;
 }
 
-.navbar-items-container {
-  width: 50%;
-  height: 80vh;
-  position: fixed;
-  margin-left: 49%;
-  transition: 0.5s;
-  border-radius: 25px;
-  display: none;
-  z-index: 100;
-  transition: 0.5s ease;
-}
-
 .display-menu {
   display: flex;
 }
 
 .navbar-items-container .navbar {
   background-color: var(--bg-color);
-  position: absolute;
+  position: relative;
   width: 100%;
   height: max-content;
   display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
   box-shadow: 0 0.1rem 1rem var(--shadow-color);
-  border-radius: 25px;
-  top: 8rem;
   transition: 0.5s ease;
 }
 
@@ -116,16 +112,6 @@ body {
   font-weight: 800;
   position: relative;
   padding: 1.5rem 2.5rem;
-}
-
-.navbar a:nth-child(1) {
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-}
-
-.navbar a:nth-child(8) {
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
 }
 
 .navbar a:hover {
@@ -165,7 +151,7 @@ body {
   font-size: 3.5rem;
   margin-top: -0.5rem;
   cursor: pointer;
-  color: var(--white-color);
+  color: var(--main-color);
 }
 
 #menu-icon.change-color {
@@ -179,15 +165,99 @@ section {
   padding: 15rem 7% 0rem;
 }
 
+.profile-image-container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 36.2%;
+  left: 16%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
+  z-index: -1;
+}
+
+.profile-overlay {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 33%;
+  left: 12.8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 7px solid #754ef9;
+  transition: box-shadow 0.5s ease;
+  z-index: 10;
+}
+
+.profile-overlay:hover {
+  box-shadow:
+    0 0 25px var(--main-color),
+    0 0 45px var(--main-color),
+    0 0 65px var(--main-color);
+}
+
+
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+
+.about-me-image-container {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 20rem;
+  box-shadow:
+    0 0 25px var(--main-color),
+    0 0 35px var(--main-color);
+}
+
+.about-me-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-me-content {
+  position: relative;
+  margin-bottom: 22%;
+  max-width: 1000px;
+}
+
+
 .home {
   display: flex;
   align-items: center;
 }
 
 .home .home-content {
-  max-width: 50rem;
+  max-width: 70rem;
   position: relative;
-  margin-top: 13rem;
+  margin-top: 17rem;
 }
 
 .home-content h3 {
@@ -202,9 +272,11 @@ section {
   margin-bottom: 0.3rem;
 }
 
-.home-content p {
-  font-size: 1.6rem;
+.home-content .sub-head {
+  font-size: 1.8rem;
+  color: var(--text-color);
 }
+
 
 .home-content .social-media a {
   display: inline-flex;
@@ -255,7 +327,6 @@ section {
   width: 768px;
   height: 768px;
   overflow: hidden;
-  pointer-events: none;
 }
 
 .home .profession-container .profession-box {
@@ -392,6 +463,7 @@ span {
 .about-content {
   position: relative;
   margin-top: 5rem;
+  padding: 4rem 0;
 }
 
 .about-img img {
@@ -404,20 +476,38 @@ span {
 }
 
 .about-content h2 {
-  text-align: center;
   line-height: 1.2;
 }
 
 .about-content h3 {
   font-size: 2rem;
-  text-align: center;
+}
+
+.skills-table-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 4rem;
+}
+
+table td {
+  padding-top: 3rem;
+  padding-left: 3rem;
+}
+
+table h2 {
+  font-size: 1.7rem;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: yellow;
 }
 
 .about-content p {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin: 2rem 0 3rem;
-  line-height: 3rem;
-  text-align: center;
+  line-height: 2.4rem;
+  text-align: justify;
 }
 
 .experience {
@@ -427,8 +517,10 @@ span {
 
 .experience-container {
   position: relative;
+  width: 100%;
   margin-top: 3rem;
   display: flex;
+  row-gap: 3rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -438,8 +530,7 @@ span {
 .experience-container .experience-box {
   display: flex;
   flex-direction: row;
-  column-gap: 5rem;
-  background: var(--bg-color);
+  background: var(--box-color);
   padding: 3rem 4rem;
   border-radius: 2rem;
   box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
@@ -448,14 +539,10 @@ span {
   transition: 0.5s ease;
 }
 
-.experience-container .experience-box:hover {
-  box-shadow: 0 0.1rem 2rem var(--shadow-color);
-  transform: scale(1.02);
-}
-
 .experience-box img {
   width: 100px;
   height: 100px;
+  padding: 10px;
 }
 
 .experience-box h3 {
@@ -492,8 +579,10 @@ span {
 
 .services-container .services-box {
   overflow: hidden;
+  width: auto;
+  height: 400px;
   flex: 1 1 28rem;
-  background: var(--bg-color);
+  background: var(--box-color);
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
   box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
@@ -501,12 +590,6 @@ span {
   border-top: 0.6rem solid var(--main-color);
   border-bottom: 0.6rem solid var(--main-color);
   transition: 0.5s ease;
-}
-
-.services-container .services-box:hover {
-  box-shadow: 0 0.1rem 2rem var(--shadow-color);
-  transform: scale(1.02);
-  overflow: hidden;
 }
 
 .services-box i {
@@ -538,7 +621,7 @@ span {
   margin-bottom: 4rem;
 }
 
-.portfolio-container{
+.portfolio-container {
   padding: 3rem;
 }
 
@@ -663,7 +746,7 @@ span {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: var(--bg-color);
+  background: var(--box-color);
   border-radius: 2rem;
   box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
   padding: 3rem 5rem;
@@ -704,7 +787,7 @@ span {
 }
 
 .testimonial-box .swiper-pagination-bullet {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(46, 46, 46, 0.8);
 }
 
 .testimonial-box .swiper-pagination-bullet-active {
@@ -735,7 +818,7 @@ span {
   padding: 1.5rem;
   font-size: 1.6rem;
   color: var(--text-color);
-  background: var(--bg-color);
+  background: var(--box-color);
   border-radius: 0.8rem;
   margin: 0.7rem 0;
   box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
@@ -760,7 +843,7 @@ span {
   align-items: center;
   flex-wrap: wrap;
   padding: 2rem 7%;
-  background: var(--main-color);
+  background: var(--box-color);
 }
 
 
@@ -803,7 +886,8 @@ span {
     width: 100vh;
     height: 120%;
   }
-  .navbar-items-container .navbar{
+
+  .navbar-items-container .navbar {
     row-gap: .5rem;
   }
 
@@ -813,7 +897,8 @@ span {
     position: relative;
     margin-top: -3rem;
   }
-  .home-content{
+
+  .home-content {
     max-width: auto;
     padding-top: 12rem;
   }
@@ -822,7 +907,11 @@ span {
     position: absolute;
     height: 60rem;
   }
-  .profession i, .profession h3, section, .about-content h2{
+
+  .profession i,
+  .profession h3,
+  section,
+  .about-content h2 {
     overflow: hidden;
   }
 
@@ -870,57 +959,67 @@ span {
     position: relative;
   }
 
-  .experience-container{
+  .experience-container {
     padding: 2rem;
   }
 
-  .experience .experience-description{
+  .experience .experience-description {
     max-width: 80%;
   }
-  .experience-container .experience-box:hover{
+
+  .experience-container .experience-box:hover {
     transform: scale(1.02);
     overflow-y: hidden;
   }
 
-  .services{
+  .services {
     padding: 25rem 7rem;
   }
-  .services-container{
+
+  .services-container {
     padding: 1rem;
   }
-  .services-container .services-box:first-child{
+
+  .services-container .services-box:first-child {
     min-height: 47rem;
   }
-  .portfolio{
+
+  .portfolio {
     padding: 15rem 7rem;
     min-height: max-content;
   }
-  .portfolio-container{
+
+  .portfolio-container {
     padding: 3rem;
   }
-  .testimonial-container{
+
+  .testimonial-container {
     min-height: max-content;
   }
 
-  .testimonial-slide{
+  .testimonial-slide {
     min-height: 10%;
   }
-  .testimonial-slide h3, .testimonial-slide p{
+
+  .testimonial-slide h3,
+  .testimonial-slide p {
     width: fit-content;
-    height:fit-content;
+    height: fit-content;
 
   }
-  .contact{
+
+  .contact {
     padding: 15rem 7rem;
   }
-  .footer{
+
+  .footer {
     max-height: 5%;
   }
-  
+
   .footer-iconTop a:hover {
     outline-color: var(--white-color);
   }
-  
+
   .footer-iconTop a i {
     font-size: 2.2rem;
     color: #333;
@@ -1019,7 +1118,8 @@ span {
     color: var(--text-color);
     margin-bottom: 0.1rem;
   }
-  .navbar-items-container{
+
+  .navbar-items-container {
     width: 70%;
     height: 100%;
     margin-left: 12rem;
@@ -1155,20 +1255,22 @@ span {
     width: 70vw;
     margin-top: -2rem;
   }
-  
 
-  .experience, .experience-container .experience-box{
+
+  .experience,
+  .experience-container .experience-box {
     display: flex;
     align-items: center;
     text-align: center;
     flex-direction: column;
     row-gap: 2rem;
   }
-  .experience-container .experience-box .experience-description p:nth-child(3){
+
+  .experience-container .experience-box .experience-description p:nth-child(3) {
     text-align: justify;
   }
 
-  .experience-description{
+  .experience-description {
     padding: 0;
   }
 
@@ -1194,11 +1296,11 @@ span {
     display: none;
   }
 
-  .contact{
+  .contact {
     padding: 18rem 2rem;
   }
 
-  .footer{
+  .footer {
     position: relative;
     display: flex;
     top: -18rem;
@@ -1247,15 +1349,18 @@ span {
 }
 
 @media (max-width: 365px) {
-  #meno-icon{
+  #meno-icon {
     color: var(--main-color);
   }
-  .home .home-content{
+
+  .home .home-content {
     margin-top: 8rem;
   }
-  .work_img{
+
+  .work_img {
     display: none;
   }
+
   .about-img img {
     width: 90vw;
   }

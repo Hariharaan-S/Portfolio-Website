@@ -4,19 +4,6 @@ let navbar = document.querySelector(".navbar");
 let menuBar = document.getElementById("navbar-items-container");
 let darken = document.getElementById("darken");
 
-
-/*================Toggle the Background and Menu Icon=====================*/
-menuIcon.onclick = () => {
-  menuBar.classList.toggle("display-menu");
-  darken.classList.toggle("darken-the-bg");
-};
-
-const toggleMenu = () => {
-  if (menuBar.classList.contains("display-menu")) {
-    menuBar.classList.remove("display-menu");
-    darken.classList.toggle("darken-the-bg");
-  }
-};
 /*================Toggle the Background and Menu Icon when click outside=====================*/
 // function closeMenu(event) {
 //   if (!menuBar.contains(event.target) && event.target !== menuIcon) {
@@ -49,7 +36,6 @@ window.onscroll = () => {
   /*============sticky navbar================*/
   let header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 100);
-  menuIcon.classList.toggle("change-color", window.scrollY > 100);
 
   /*============remove menu icon navbar when click navbar link (scroll)================*/
   navbar.classList.remove("active");
@@ -114,3 +100,4 @@ var year = date.getFullYear();
 document.querySelector(
   ".footer-text"
 ).innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`;
+

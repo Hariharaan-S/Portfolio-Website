@@ -96,16 +96,19 @@ app.get("/services/:name", async (req, res) => {
   var p_names = services[0].projects;
   var s_name = services[0].skillset;
 
-  const leetcode = new LeetCode();
-  const user = await leetcode.user("Hariharaan-S");
+  // const leetcode = new LeetCode();
+  // const user = await leetcode.user("Hariharaan-S");
 
-  const username = user.matchedUser.username;
-  const submintCount = user.matchedUser.submitStats.acSubmissionNum;
-  const easy = submintCount[1].count;
-  const med = submintCount[2].count;
-  const hd = submintCount[3].count;
-  const recentSub = user.recentSubmissionList;
-  res.render("services.ejs", { name: ser_name, content: head_content, c_name: c_names, p_name: p_names, s_name: s_name, lUsername: username, easy: easy, med: med, hd: hd, lRecent: recentSub })
+  // const username = user.matchedUser.username;
+  // const submintCount = user.matchedUser.submitStats.acSubmissionNum;
+  // const easy = submintCount[1].count;
+  // const med = submintCount[2].count;
+  // const hd = submintCount[3].count;
+  // const recentSub = user.recentSubmissionList;
+
+
+  //should be in render method: { name: ser_name, content: head_content, c_name: c_names, p_name: p_names, s_name: s_name, lUsername: username, easy: easy, med: med, hd: hd, lRecent: recentSub || null }
+  res.render("services.ejs", { name: ser_name, content: head_content, c_name: c_names, p_name: p_names, s_name: s_name })
 });
 
 app.get("/projects/:name", async (req, res) => {

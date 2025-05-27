@@ -15,15 +15,15 @@
 
 <body>
     <div id="darken" style="display: block;"></div>
+    <video autoplay muted loop id="bg-video">
+        <source src="images/bg.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
     <!-- Header design-->
     <header class="header">
         <a href="/" class="logo" id="logo">PortFolio</a>
-        <i class='bx bx-menu' id="menu-icon"></i>
-    </header>
-    <div class="navbar-items-container" id="navbar-items-container">
         <div class="navbar">
-            <h1>Move To</h1>
             <a onclick="toggleMenu()" href="#home">Home</a>
             <a onclick="toggleMenu()" href="#about">About</a>
             <a onclick="toggleMenu()" href="#experience">Experience</a>
@@ -32,14 +32,13 @@
             <a onclick="toggleMenu()" href="#achievements">Achievements</a>
             <a onclick="toggleMenu()" href="#contact">Contact</a>
         </div>
-    </div>
+    </header>
 
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello I'm</h3>
             <h1>Hariharaan S</h1>
-            <p>Ex-Intern@ProjectSense || Final year Student at St. Joseph's College of Engineering</p>
-            <p>Full Stack Developer||SIH'22 Finalist||<br>Machine Learning Endhusiastic</p>
+            <p class="sub-head">I'm a <span class="auto-typed"></span></p>
 
             <div class="social-media">
                 <a href="https://twitter.com/s_hariharaan" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -50,31 +49,11 @@
             <a href="Resume Hariharaan S.pdf" class="btn" download>Download CV</a>
         </div>
         <div class="profession-container">
-            <div class="profession-box">
-                <div class="profession" style="--i:0;">
-                    <i class="fa-solid fa-code"></i>
-                    <h3>Web Developer</h3>
-                </div>
-                <div class="profession" style="--i:1;">
-                    <i class="fa-brands fa-react"></i>
-                    <h3>React Developer</h3>
-                </div>
-                <div class="profession" style="--i:2;">
-                    <i class="fa-brands fa-node-js"></i>
-                    <h3>Node Developer</h3>
-                </div>
-                <div class="profession" style="--i:3;">
-                    <i class="fa-solid fa-music"></i>
-                    <h3>Vocal Singer</h3>
-                </div>
-
-                <div class="circle"></div>
+            <div class="profile-overlay"></div>
+            <div class="profile-image-container">
+                <img class="profile-image" src="images/profile.jpg" alt="" srcset="">
             </div>
 
-            <div class="overlay"></div>
-        </div>
-        <div class="work_img">
-            <img src="images//work.svg" alt="" srcset="">
         </div>
 
     </section>
@@ -84,13 +63,185 @@
     <section class="about" id="about">
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
-            <h3>Hi, I am here to help you out</h3>
-            <p>I am Hariharaan, a final-year student at St. Joseph's College of Engineering with a CGPA of 9.17.
-                Passionate about Full Stack Development, I was member of "Unique Coders" and was a Finalist in the
-                Smart India Hackathon 2022. I've interned as a Full-stack Developer at ProjectSense Org, focusing on
-                creating seamless user interfaces and back-end solutions. Active in hackathons like VIT Chennai Cyber
-                Hackathon, I am committed to advancing as a Full Stack Developer.
-            </p>
+            <div class="about-me-container">
+                <div class="about-me-image-container">
+                    <img class="about-me-image" src="images/IMG_0450.jpg" alt="" srcset="">
+                </div>
+                <div class="about-me-content">
+                    <p>&ensp; I am Hariharaan, a recent graduate from St. Joseph's College of Engineering with a CGPA of
+                        9.13.
+                        Passionate about Full Stack Development and DevOps, I was a member of "Unique Coders" and a
+                        Finalist in the Smart India Hackathon 2022 and 2024, with the latter held at IIT Gandhinagar.
+                        I’ve interned as a Full-stack Developer at ProjectSense Org, where I focused on building
+                        seamless user interfaces and robust back-end solutions.
+
+                        Currently, I am interning at Accenture as a Full-stack Developer, gaining hands-on experience in
+                        enterprise-level application development and DevOps practices within agile teams.
+
+                        I hold a certification in Cloud Computing and actively participate in hackathons like the VIT
+                        Chennai Cyber Hackathon. I am committed to growing as a Full Stack Developer with a strong
+                        interest in DevOps.
+                    </p>
+                    <div class="skills-container">
+                        <h3>Skills</h3>
+                        <div class="skills-table-container">
+                            <table class="skills-table" border="1" cellpadding="10" cellspacing="10">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h2>HTML</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>CSS</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>Bootstrap</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>JavaScript</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>JQuery</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>ReactJS</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="skills-table" border="1" cellpadding="10" cellspacing="10">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h2>NodeJS</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>ExpressJS</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>Flask</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>MySQL</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>MongoDB</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>Firebase</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="skills-table" border="1" cellpadding="10" cellspacing="10">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h2>AWS</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>Git</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>GitHub</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>RESTful APIs</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>Docker</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2>Kubernetes</h2>
+                                        </td>
+                                        <td class="star"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -98,6 +249,16 @@
     <section class="experience" id="experience">
         <h2 class="heading">My <span>Experience</span></h2>
         <div class="experience-container">
+            <div class="experience-box">
+                <img class="intern_logo" src="images/Accenture-Logo.png" alt="" srcset="">
+                <div class="experience-description">
+                    <h3>Intern - App Developer</h3>
+                    <p>Accenture, India, Feb 2025 - Present</p>
+                    <p>Trained in foundational concepts of Software Development Life Cycle (SDLC), web development
+                        technologies, and cloud computing platforms. Assigned to live project tasks involving feature
+                        development, bug fixing, and code reviews within an agile team environment.</p>
+                </div>
+            </div>
             <div class="experience-box">
                 <img class="intern_logo" src="images\\intern1_logo.jpeg" alt="" srcset="">
                 <div class="experience-description">
@@ -109,6 +270,7 @@
                         requirements.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -122,7 +284,7 @@
                 <p>Involves crafting websites and web applications through front-end design, back-end
                     programming, and technology integration. Employ HTML, CSS, JavaScript, and server-side
                     languages to create user-friendly, responsive online experiences.</p>
-                <a href="/services/Web Development" class="btn">Read More</a>
+                <!-- <a href="/services/Web Development" class="btn">Read More</a> -->
             </div>
             <div class="services-box">
                 <i class="fa-solid fa-laptop"></i>
@@ -131,7 +293,7 @@
                     Machine learning (ML) development is the process of designing, training, and deploying machine
                     learning models and algorithms. Work with data to create predictive, classification,
                     or clustering models, enabling systems to make data-driven decisions.</p>
-                <a href="/services/ML Development" class="btn">Read More</a>
+                <!-- <a href="/services/ML Development" class="btn">Read More</a> -->
             </div>
             <div class="services-box">
                 <i class="fa-solid fa-tv"></i>
@@ -139,7 +301,7 @@
                 <p>Highly skilled in Java's object-oriented features, with a track record of solving numerous complex
                     problems on platforms like Hackerrank and LeetCode. Eager to continue pushing boundaries and
                     mastering advanced Java development to tackle challenges.</p>
-                <a href="/services/Competitive Coder" class="btn">Read More</a>
+                <!-- <a href="/services/Competitive Coder" class="btn">Read More</a> -->
             </div>
         </div>
     </section>
@@ -205,9 +367,18 @@
             <div class="testimonial-box mySwiper">
                 <div class="testimonial-content swiper-wrapper">
                     <div class="testimonial-slide swiper-slide">
+                        <img width="80%" height="80%" src="images/SIH 2024.jpg" alt="">
+                        <h3>Finalist in SIH 2024</h3>
+                        <p> Being a finalist in SIH 2024 was a transformative experience. The intense competition
+                            sharpened my skills and strengthened my resilience. Collaborating with like-minded
+                            individuals expanded my perspective and led to lasting connections. Most importantly, it
+                            taught me to view challenges as opportunities for growth.
+                        </p>
+                    </div>
+                    <div class="testimonial-slide swiper-slide">
                         <img width="80%" height="80%" src="images/SIH 2022.png" alt="">
                         <h3>Finalist in SIH 2022</h3>
-                        <p>Being a finalist in SH 2022 was a transformative journey. The intense competition pushed me
+                        <p>Being a finalist in SIH 2024 was a transformative journey. The intense competition pushed me
                             to excel, fostering resilience and determination. Interacting with like-minded individuals
                             broadened my horizons, fostering lifelong friendships. The experience instilled in me the
                             value of perseverance and the importance of embracing challenges as opportunities for
@@ -294,6 +465,15 @@
     <!-- Sweetalert2 for mesage dialog box -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js\\index.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.auto-typed', {
+            strings: ['Full Stack Developer', 'Cloud Practitioner', 'Devops Enthusiast'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        });
+    </script>
 </body>
 
 </html>

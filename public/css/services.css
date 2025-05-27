@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,17 +8,19 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-:root{
+:root {
     --bg-color: #fdfdff;
     --text-color: #333;
     --main-color: #754ef9;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
-.heading,.sub-heading{
+
+.heading,
+.sub-heading {
     position: absolute;
     z-index: 2;
     color: white;
@@ -25,37 +28,40 @@
     top: 6rem;
     left: .5rem;
 }
-.sub-heading{
+
+.sub-heading {
     font-size: .9rem;
     color: rgb(219, 218, 218);
     top: 13rem;
     width: 40%;
 }
 
-span{
+span {
     color: #5272F2;
 }
 
-.overlay{
+.overlay {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 25rem;
-    background: rgb(0, 0, 0,0.7);
+    background: rgb(0, 0, 0, 0.7);
 }
 
-.bg-image{
+.bg-image {
     background: red;
     width: 100%;
     height: 25rem;
     position: relative;
 }
-.bg-image img{
+
+.bg-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.know_more{
+
+.know_more {
     position: absolute;
     top: 18rem;
     left: .5rem;
@@ -68,93 +74,112 @@ span{
     cursor: pointer;
     transition: ease-in .3s;
 }
-.know_more:hover{
+
+.know_more:hover {
     border: 1px solid #FFFBF5;
     background: none;
     color: #fffbf5;
 }
-.course_head{
+
+.course_head {
     position: relative;
     margin: 5% 2%;
 }
-table{
+
+table {
     position: relative;
     margin: 5% 2%;
     border-radius: 10px;
 }
-th{
+
+th {
     position: relative;
     background: #072541;
     color: var(--white-color);
     padding: 1.2rem;
     font-size: .8rem;
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background: #dffbff;
 }
-th:nth-child(2){
+
+th:nth-child(2) {
     width: 150px;
 }
-th:first-child{
+
+th:first-child {
     border-top-left-radius: 10px;
 }
-th:last-child{
+
+th:last-child {
     border-top-right-radius: 10px;
 }
-td:first-child{
+
+td:first-child {
     border-bottom-left-radius: 10px;
 }
 
-td:last-child{
+td:last-child {
     border-bottom-right-radius: 10px;
 }
-td{
+
+td {
     position: relative;
     padding: 2rem 1rem;
     font-size: 1.1rem;
 }
-.course_head{
-    font-size:2.5rem;
+
+.course_head {
+    font-size: 2.5rem;
 }
-.skill_head{
+
+.skill_head {
     position: relative;
     margin-top: -2%;
 }
-.skill_names{
+
+.skill_names {
     display: flex;
     flex-direction: row;
     margin: 5rem 0;
 }
-#skills{
+
+#skills {
     position: relative;
     margin-top: 5rem;
     width: 80%;
 }
-.skill_part{
+
+.skill_part {
     width: 100%;
 }
-.skill_name{
+
+.skill_name {
     position: relative;
     margin: 2rem;
     font-size: 1.5rem;
 }
-.skill-bar{
+
+.skill-bar {
     height: 14px;
     background-color: #C2D9FF;
     border-radius: 10px;
     position: relative;
     margin: 2rem;
 }
-.skill-per{
+
+.skill-per {
     max-width: var(--i);
     height: 14px;
     background-color: #190482;
     border-radius: 10px;
-    position:relative;
+    position: relative;
     transition: ease 0.5s;
     animation: fillBar 2.5s 1;
 }
-.skill-per::before{
+
+.skill-per::before {
     content: attr(per);
     position: absolute;
     padding: 4px 6px;
@@ -165,7 +190,8 @@ td{
     right: 0;
     transform: translateX(50%);
 }
-.skill-per::after{
+
+.skill-per::after {
     content: "";
     position: absolute;
     width: 10px;
@@ -177,105 +203,129 @@ td{
     transform: translateX(50%) rotate(45deg);
     z-index: 0;
 }
+
 @keyframes fillBar {
-    from{
+    from {
         width: 0%;
     }
-    to{
+
+    to {
         width: 100%;
     }
 }
 
-.leetcode h2{
+.leetcode h2 {
     position: relative;
     margin-left: 2rem;
 }
 
-.lt-wrapper{
+.lt-wrapper {
     position: relative;
     margin: 2rem;
     display: flex;
     flex-direction: row;
     gap: 10%;
 }
-.leetcode table{
+
+.leetcode table {
     position: relative;
     margin-top: 10px;
     width: 90%;
 }
-.leetcode table th:nth-child(2){
+
+.leetcode table th:nth-child(2) {
     width: 20%;
 }
 
-.lt-wrapper .lt-item:nth-child(2){
+.lt-wrapper .lt-item:nth-child(2) {
     padding-left: 22%;
 }
+
 /* BREAKPOINTS */
 
-@media(max-width: 1300px){
-    html{
+@media(max-width: 1300px) {
+    html {
         font-size: 55%;
     }
 }
-@media(max-width: 991px){
-    html,body{
+
+@media(max-width: 991px) {
+
+    html,
+    body {
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    #skills{
+
+    #skills {
         width: 90%;
     }
-    #courses, #projects{
+
+    #courses,
+    #projects {
         width: 90%;
     }
 }
 
-@media(max-width: 768px){
-    html,body{
+@media(max-width: 768px) {
+
+    html,
+    body {
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    #skills{
+
+    #skills {
         width: 90%;
     }
-    #courses, #projects{
+
+    #courses,
+    #projects {
         width: 90%;
     }
 }
 
-@media (max-width: 617px){
-    html{
+@media (max-width: 617px) {
+    html {
         font-size: 50%;
     }
-    .heading{
+
+    .heading {
         top: 3rem;
     }
-    .sub-heading{
+
+    .sub-heading {
         top: 11rem;
     }
-    #skills{
+
+    #skills {
         width: 100%;
     }
-    #courses, #projects{
+
+    #courses,
+    #projects {
         width: 100%;
     }
-    #courses table, #projects table{
+
+    #courses table,
+    #projects table {
         width: 95%;
     }
 }
 
-@media(max-width: 365px){
-    .heading{
+@media(max-width: 365px) {
+    .heading {
         font-size: 37px;
         top: 2rem;
     }
-    .sub-heading{
+
+    .sub-heading {
         top: 9rem;
     }
 }
