@@ -41,20 +41,41 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 /*============swiper================*/
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 50,
+const projectsSwiper = new Swiper('.mySwiperProjects', {
+  slidesPerView: 3,
+  spaceBetween: 20,
   loop: true,
-  grabCursor: true,
+  loopedSlides: 4, // Important: manually set number of slides to loop
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
+  navigation: {
+    nextEl: '.projects-button-next',
+    prevEl: '.projects-button-prev',
+  },
   pagination: {
-    el: ".swiper-pagination",
+    el: '.projects-pagination',
     clickable: true,
   },
+});
+
+
+
+const achievementsSwiper = new Swiper('.mySwiperAchievements', {
+  loop: true,
+  spaceBetween: 20,
+  slidesPerView: 1,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.achievements-button-next',
+    prevEl: '.achievements-button-prev',
+  },
+  pagination: {
+    el: '.achievements-pagination',
+    clickable: true,
   },
 });
+
 
 /*============Scroll Reveal================*/
 ScrollReveal({ distance: "80px", duration: 2000, delay: 200 });
@@ -100,4 +121,5 @@ var year = date.getFullYear();
 document.querySelector(
   ".footer-text"
 ).innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`;
+
 
