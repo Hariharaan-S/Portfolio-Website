@@ -5,4 +5,4 @@ package-lock.json
 
 # Local Netlify folder
 .netlify
-*mp4
+*.mp4
