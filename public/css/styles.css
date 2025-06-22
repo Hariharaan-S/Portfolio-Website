@@ -449,6 +449,9 @@ span {
   color: var(--main-color);
 }
 
+.about {
+  margin-top: 7rem;
+}
 
 .about-content {
   position: relative;
@@ -501,14 +504,16 @@ table h2 {
 }
 
 .experience {
-  min-height: auto;
-  padding-bottom: 7rem;
+  width: 100%;
+  margin-top: -8rem;
+  padding: 0 2rem !important;
 }
 
 .experience-container {
   position: relative;
   width: 100%;
-  margin-top: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   display: flex;
   row-gap: 3rem;
   justify-content: center;
@@ -520,6 +525,7 @@ table h2 {
 .experience-container .experience-box {
   display: flex;
   flex-direction: row;
+  width: 90%;
   background: var(--box-color);
   padding: 3rem 4rem;
   border-radius: 2rem;
@@ -527,6 +533,16 @@ table h2 {
   border-top: 0.6rem solid var(--main-color);
   border-bottom: 0.6rem solid var(--main-color);
   transition: 0.5s ease;
+  z-index: 10;
+}
+
+.experience-container .experience-box:hover {
+  transform: scale(1.01, 1.01);
+  box-shadow: 0 0 0 #754ef9,
+    0 0 2px #754ef9,
+    0 0 5px #754ef9,
+    0 0 15px #754ef9,
+    0 0 25px #754ef9;
 }
 
 .experience-box img {
@@ -552,6 +568,7 @@ table h2 {
 
 .services {
   min-height: 100vh;
+  margin-top: 20rem;
   padding-bottom: 7rem;
 }
 
@@ -582,6 +599,15 @@ table h2 {
   transition: 0.5s ease;
 }
 
+.services-container .services-box:hover {
+  transform: scale(1.03, 1.03);
+  box-shadow: 0 0 0 #754ef9,
+    0 0 2px #754ef9,
+    0 0 5px #754ef9,
+    0 0 15px #754ef9,
+    0 0 25px #754ef9;
+}
+
 .services-box i {
   font-size: 7rem;
   overflow: hidden;
@@ -603,20 +629,26 @@ table h2 {
   margin: 1rem 0 3rem;
 }
 
-.project-slide {
-  max-width: 400px;
+.portfolio {
+  margin-top: 35rem;
+  padding: 2rem 3rem !important;
 }
 
-.project-wrapper {
-  margin-top: 8rem;
+.project-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+  column-gap: 3rem;
+  padding: 0 8rem;
 }
 
 .project-slide .project-logo-container {
   position: relative;
-  width: 400px;
-  height: 500px;
+  width: 300px;
+  height: 600px;
   border-radius: 20px;
   cursor: pointer;
+  transition: .5s ease;
 }
 
 .project-slide .project-logo-container img {
@@ -624,12 +656,14 @@ table h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+  transition: transform 0.4s ease;
+  /* Added transition */
 }
 
 .project-slide .project-box {
   position: absolute;
   bottom: 0;
-  width: 400px;
+  width: 300px;
   height: 0px;
   border-radius: 20px;
   display: flex;
@@ -646,7 +680,7 @@ table h2 {
 .project-logo-container:hover .project-box {
   visibility: visible;
   opacity: 1;
-  height: 500px;
+  height: 600px;
 }
 
 .project-slide.show .project-box {
@@ -680,6 +714,7 @@ table h2 {
   flex-direction: column;
   width: 100%;
   padding: 0 1rem;
+  margin-top: 30rem;
 }
 
 .testimonial-container .heading {
@@ -750,6 +785,10 @@ table h2 {
 
 .testimonial-box .swiper-pagination-bullet-active {
   background: var(--main-color);
+}
+
+.contact {
+  margin-top: 20rem;
 }
 
 .contact h2 {

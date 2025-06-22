@@ -41,26 +41,6 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 /*============swiper================*/
-const projectsSwiper = new Swiper('.mySwiperProjects', {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  loop: true,
-  loopedSlides: 4, // Important: manually set number of slides to loop
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
-  navigation: {
-    nextEl: '.projects-button-next',
-    prevEl: '.projects-button-prev',
-  },
-  pagination: {
-    el: '.projects-pagination',
-    clickable: true,
-  },
-});
-
-
 
 const achievementsSwiper = new Swiper('.mySwiperAchievements', {
   loop: true,

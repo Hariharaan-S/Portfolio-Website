@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,17 +8,19 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-:root{
+:root {
     --bg-color: #fdfdff;
     --text-color: #333;
     --main-color: #754ef9;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
-.heading,.sub-heading{
+
+.heading,
+.sub-heading {
     width: 100%;
     position: absolute;
     z-index: 2;
@@ -26,7 +29,8 @@
     top: 6rem;
     text-align: center;
 }
-.sub-heading{
+
+.sub-heading {
     font-size: .9rem;
     color: rgb(219, 218, 218);
     top: 13rem;
@@ -35,30 +39,32 @@
     text-align: center;
 }
 
-span{
+span {
     color: #5272F2;
 }
 
-.overlay{
+.overlay {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 22rem;
-    background: rgb(0, 0, 0,0.5);
+    background: rgb(0, 0, 0, 0.5);
 }
 
-.bg-image{
+.bg-image {
     background: red;
     width: 100%;
     height: 22rem;
     position: relative;
 }
-.bg-image img{
+
+.bg-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-#know_more{
+
+#know_more {
     position: absolute;
     top: 18rem;
     left: .5rem;
@@ -71,106 +77,113 @@ span{
     cursor: pointer;
     transition: ease-in .3s;
 }
-#know_more:hover{
+
+#know_more:hover {
     border: 1px solid #FFFBF5;
     background: none;
     color: #fffbf5;
 }
-.project_head{
+
+.project_head {
     position: relative;
     margin: 5% 2%;
 }
-.desc-container{
+
+.desc-container {
     position: relative;
     margin: 2% 3%;
 }
-#description .desc-part{
-  position: relative;
-  margin: 5rem 0;
-  text-align: justify;
+
+#description .desc-part {
+    position: relative;
+    margin: 5rem 0;
+    text-align: justify;
 }
 
-#description .desc-wrapper .desc-part .about_desc{
+#description .desc-wrapper .desc-part .about_desc {
     width: 90%;
 }
 
-#description .desc-part:nth-child(2),#description .desc-part:nth-child(3),#description .desc-part:nth-child(4){
-  margin-top: -3rem;
-  font-size: 1.3rem;
+#description .desc-part:nth-child(2),
+#description .desc-part:nth-child(3),
+#description .desc-part:nth-child(4) {
+    margin-top: -3rem;
+    font-size: 1.3rem;
 }
 
-#description .heading{
-  font-size: 2.5rem;
-  text-align: start;
-  position:relative;
-  color: black;
-  width: 70%;
+#description .heading {
+    font-size: 2.5rem;
+    text-align: start;
+    position: relative;
+    color: black;
+    width: 70%;
 }
-#description .about_desc,#description .key_features,#description .techstack_desc{
-  position: relative;
-  margin: 7rem 0rem;
+
+#description .about_desc,
+#description .key_features,
+#description .techstack_desc {
+    position: relative;
+    margin: 7rem 0rem;
 }
-#description .desc-wrapper{
+
+#description .desc-wrapper {
     display: flex;
     flex-direction: row;
 }
-#description .desc-wrapper .about_img{
+
+#description .desc-wrapper .about_img {
     position: relative;
     width: 350px;
     height: 350px;
     margin: 2rem 8rem;
 }
-#description .desc-wrapper .about_img img:nth-child(2){
+
+#description .desc-wrapper .about_img img:nth-child(2) {
     position: relative;
     margin-top: 7rem;
     margin-left: 2rem;
 }
-#description .desc-wrapper .about_img img:nth-child(3){
+
+#description .desc-wrapper .about_img img:nth-child(3) {
     position: relative;
     margin-top: 5rem;
 }
 
-.video-images{
+.video-images {
     position: relative;
     width: 100%;
     height: 100vh;
-    margin: 7rem 0;
 }
 
-.video-images .heading{
+.video-images .heading {
     position: absolute !important;
     margin-top: -96px;
 }
+
 /* BREAKPOINTS */
-@media(max-width: 1366px){
+@media(max-width: 1366px) {}
 
-}
+@media(max-width: 1300px) {}
 
-@media(max-width: 1300px){
+@media(max-width: 1024px) {}
 
-}
+@media(max-width: 991px) {}
 
-@media(max-width: 1024px){
+@media(max-width: 768px) {}
 
+@media (max-width: 617px) {}
 
-}
-@media(max-width: 991px){
+@media (max-width: 617px) {}
 
-}
-
-@media(max-width: 768px){
+@media(max-width: 365px) {}
 
 
-}
-
-@media (max-width: 617px){
-
-}
-
-@media (max-width: 617px){
-
-}
-
-@media(max-width: 365px){
-
+.project-video {
+    position: relative;
+    margin: 7rem 12rem 0 12rem;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
