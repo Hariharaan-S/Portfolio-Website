@@ -63,7 +63,7 @@ body {
   background: rgba(10, 10, 10, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -212,8 +212,8 @@ section {
 .about-me-container {
   display: flex;
   flex-direction: row;
-  align-items:center;
-  justify-content:space-around;
+  align-items: center;
+  justify-content: space-around;
   margin-top: 20rem;
 }
 
@@ -593,7 +593,8 @@ table h2 {
   display: flex;
   gap: 20px;
   justify-content: center;
-  align-items: stretch; /* all boxes same height */
+  align-items: stretch;
+  /* all boxes same height */
   flex-wrap: wrap;
   padding: 3rem;
 }
@@ -652,7 +653,8 @@ table h2 {
   flex-direction: row;
   gap: 20px;
   justify-content: center;
-  align-items: stretch; /* all boxes same height */
+  align-items: stretch;
+  /* all boxes same height */
   padding: 5rem;
 }
 
@@ -883,6 +885,14 @@ table h2 {
 }
 
 /* BREAKPOINTS */
+
+@media (max-width: 1775px) {
+  .home .profession-container {
+    top: 53%;
+  }
+}
+
+
 @media (max-width: 1366px) {
   * {
     overflow-x: hidden;
@@ -1045,6 +1055,7 @@ table h2 {
     right: -12rem;
     height: 85.8rem;
   }
+
 
   .home .profession-container .overlay {
     right: -9rem;
