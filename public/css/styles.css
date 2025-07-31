@@ -1476,20 +1476,96 @@ table h2 {
 }
 
 @media (max-width: 365px) {
-  #meno-icon {
-    color: var(--main-color);
+
+  .menu-icon {
+    position: absolute;
+    height: auto;
+    display: block !important;
+    margin-left: 41rem;
+    right: 1rem;
+    top: 2rem;
+    font-size: 3rem;
+    z-index: 10;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar-mobile {
+    position: relative;
+    margin-top: 7rem;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    padding: 1rem 3%;
+    display: none;
+    flex-direction: column;
+    row-gap: 2rem;
+    /* transition: .5s ease; */
+  }
+
+  .navbar-mobile a {
+    color: white;
+    font-size: 2.5rem;
   }
 
   .home .home-content {
     margin-top: 8rem;
+    height: 70vh;
   }
 
-  .work_img {
+  .profession-container {
     display: none;
   }
 
-  .about-img img {
-    width: 90vw;
+  .about {
+    margin-top: -30rem;
+    padding: 0;
+  }
+
+  .about-me-container {
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .about-content h2 {
+    line-height: 1;
+  }
+
+  .about-me-content p {
+    position: relative;
+    padding: 0 2rem;
+    margin-top: -6rem;
+    font-size: 1.7rem;
+    line-height: 2;
+  }
+
+  .skills-container {
+    height: 60vh;
+    overflow: hidden;
+  }
+
+  .wrapper .item {
+    overflow: hidden;
+  }
+
+  .experience {
+    margin-top: -20rem;
+  }
+
+  .services {
+    margin-top: 4rem;
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  #achievements {
+    margin-top: 5rem;
   }
 
   .testimonial-wrapper .testimonial-box {
@@ -1505,11 +1581,28 @@ table h2 {
     height: 20rem;
   }
 
+  .contact {
+    margin-top: 2rem;
+  }
+
   .footer {
     flex-direction: column-reverse;
+    height: fit-content;
+    position: relative;
+    top: 0;
   }
 
   .footer p {
     text-align: center;
+  }
+
+  .footer-iconTop {
+    position: absolute;
+    left: 41rem;
+    top: 4rem;
+  }
+
+  .footer-iconTop a {
+    padding: 0.5rem;
   }
 }

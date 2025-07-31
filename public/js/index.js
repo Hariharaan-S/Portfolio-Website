@@ -1,5 +1,4 @@
 /*============menu icon navbar================*/
-let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let menuBar = document.getElementById("navbar-items-container");
 let darken = document.getElementById("darken");
@@ -46,6 +45,10 @@ const achievementsSwiper = new Swiper('.mySwiperAchievements', {
   loop: true,
   spaceBetween: 20,
   slidesPerView: 1,
+  autoplay: {
+    delay: 5000, // Time in milliseconds between slide transitions
+    disableOnInteraction: false, // Prevents stopping autoplay on user interaction
+  },
   navigation: {
     nextEl: '.achievements-button-next',
     prevEl: '.achievements-button-prev',
@@ -102,4 +105,11 @@ document.querySelector(
   ".footer-text"
 ).innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`;
 
-
+const menuIcon = document.querySelector('.menu-icon');
+const navBarMobile = document.querySelector('.navbar-mobile');
+menuIcon.addEventListener('click', () => {
+  if (navBarMobile.style.display === 'flex')
+    navBarMobile.style.display = 'none';
+  else
+    navBarMobile.style.display = 'flex';
+})

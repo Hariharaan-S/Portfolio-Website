@@ -19,6 +19,7 @@
     <!-- Header design-->
     <header class="header">
         <a href="/" class="logo" id="logo">PortFolio</a>
+        <i class="fa-solid fa-ellipsis menu-icon" style="display: none;"></i>
         <div class="navbar">
             <a onclick="toggleMenu()" href="#home">Home</a>
             <a onclick="toggleMenu()" href="#about">About</a>
@@ -29,8 +30,17 @@
             <a onclick="toggleMenu()" href="#contact">Contact</a>
         </div>
     </header>
+    <div class="navbar-mobile">
+        <a onclick="toggleMenu()" href="#home">Home</a>
+        <a onclick="toggleMenu()" href="#about">About</a>
+        <a onclick="toggleMenu()" href="#experience">Experience</a>
+        <a onclick="toggleMenu()" href="#services">Services</a>
+        <a onclick="toggleMenu()" href="#projects">Projects</a>
+        <a onclick="toggleMenu()" href="#achievements">Achievements</a>
+        <a onclick="toggleMenu()" href="#contact">Contact</a>
+    </div>
 
-    <section class="home" id="home">
+    <section class="home .move-down-home-section" id="home">
         <div class="home-content">
             <h3>Hello I'm</h3>
             <h1>Hariharaan S</h1>
