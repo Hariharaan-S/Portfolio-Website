@@ -1,10 +1,11 @@
 import express from "express";
-import 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config()
 const app = express();
 import { mongoose } from "mongoose";
 import bodyParser from "body-parser"
 app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect(process.env.MONGO_DB_CLIENT || "mongodb+srv://shariharaan2003:uhcr28rkv64ygUYW@portfolio.b2p6ba0.mongodb.net/portfolio");
+mongoose.connect(process.env.MONGO_DB_CLIENT);
 import { LeetCode } from "leetcode-query";
 
 const course = new mongoose.Schema({
