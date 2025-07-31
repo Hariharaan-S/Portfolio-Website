@@ -81,6 +81,10 @@ body {
   overflow-y: hidden;
 }
 
+.navbar-mobile {
+  display: none;
+}
+
 .navbar-items-container .navbar {
   background-color: var(--bg-color);
   position: relative;
