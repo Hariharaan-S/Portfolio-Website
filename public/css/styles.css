@@ -1440,42 +1440,107 @@ table h2 {
 }
 
 @media (max-width: 617px) {
-  .portfolio .portfolio-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 617px) {
   html {
     font-size: 50%;
   }
 
-  #darkMode-icon {
-    right: 6rem;
+  .menu-icon {
+    position: absolute;
+    height: auto;
+    display: block !important;
+    margin-left: 41rem;
+    right: 1rem;
+    top: 2rem;
+    font-size: 3rem;
+    z-index: 10;
+  }
+
+  .navbar-mobile {
+    position: relative;
+    margin-top: 7rem;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    padding: 1rem 3%;
+    display: none;
+    flex-direction: column;
+    row-gap: 2rem;
+    /* transition: .5s ease; */
+  }
+
+  .navbar-mobile a {
+    color: white;
+    font-size: 2.5rem;
   }
 
   .home {
     padding: 0 3% 30rem;
   }
 
-  .home .profession-box .profession:nth-child(1) {
-    transform: rotate(-90deg) translate(-110px, -220px);
+  .profile-overlay {
+    left: 17.5%;
   }
 
-  .home .profession-box .profession:nth-child(2) {
-    transform: rotate(0deg) translate(5px, -335px);
+  .profile-image-container {
+    left: 20.8%;
+    top: 35.8%;
   }
 
-  .home .profession-box .profession:nth-child(3) {
-    transform: rotate(90deg) translate(-105px, -440px);
+  .about {
+    margin-top: -10rem;
   }
 
-  .home .profession-box .profession:nth-child(4) {
-    transform: rotate(180deg) translate(-210px, -335px);
+  .about-me-container {
+    height: 60vh;
   }
 
-  .contact form .input-box input {
+  .about-me-content {
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+
+  .item {
+    overflow: hidden;
+  }
+
+  .experience {
+    margin-top: 10rem;
+  }
+
+  .services-container .services-box:first-child {
+    min-height: 0%;
+  }
+
+  .project-content {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .swiper,
+  .mySwiperAchievements {
     width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .testimonial-box {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    height: 500px;
+    /* Adjust as needed */
   }
 }
 

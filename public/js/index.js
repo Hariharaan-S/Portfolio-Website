@@ -46,8 +46,8 @@ const achievementsSwiper = new Swiper('.mySwiperAchievements', {
   spaceBetween: 20,
   slidesPerView: 1,
   autoplay: {
-    delay: 5000, // Time in milliseconds between slide transitions
-    disableOnInteraction: false, // Prevents stopping autoplay on user interaction
+    delay: 3000,
+    disableOnInteraction: false,
   },
   navigation: {
     nextEl: '.achievements-button-next',
@@ -57,6 +57,16 @@ const achievementsSwiper = new Swiper('.mySwiperAchievements', {
     el: '.achievements-pagination',
     clickable: true,
   },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }
 });
 
 
@@ -104,6 +114,8 @@ var year = date.getFullYear();
 document.querySelector(
   ".footer-text"
 ).innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`;
+
+//============================Menu move down on click Hamburger Icon=============================//
 
 const menuIcon = document.querySelector('.menu-icon');
 const navBarMobile = document.querySelector('.navbar-mobile');
