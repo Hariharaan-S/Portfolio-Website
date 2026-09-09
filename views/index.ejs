@@ -4,142 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi! I'm Hari</title>
-    <!-- swiper css -->
-    <link rel="shortcut icon" href="images\favicon.ico" type="image/x-icon">
+    <title>Hariharaan S — Full Stack Developer</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://kit.fontawesome.com/c1b3701aff.js" crossorigin="anonymous"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css//styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <div id="darken" style="display: block;"></div>
 
-    <!-- Header design-->
+    <!-- Navigation -->
     <header class="header">
-        <a href="/" class="logo" id="logo">PortFolio</a>
-        <i class="fa-solid fa-ellipsis menu-icon" style="display: none;"></i>
-        <div class="navbar">
-            <a onclick="toggleMenu()" href="#home">Home</a>
-            <a onclick="toggleMenu()" href="#about">About</a>
-            <a onclick="toggleMenu()" href="#experience">Experience</a>
-            <a onclick="toggleMenu()" href="#services">Services</a>
-            <a onclick="toggleMenu()" href="#projects">Projects</a>
-            <a onclick="toggleMenu()" href="#achievements">Achievements</a>
-            <a onclick="toggleMenu()" href="#contact">Contact</a>
+        <nav class="nav-container">
+            <a href="/" class="logo">Hari<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <div class="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
         </div>
     </header>
-    <div class="navbar-mobile">
-        <a onclick="toggleMenu()" href="#home">Home</a>
-        <a onclick="toggleMenu()" href="#about">About</a>
-        <a onclick="toggleMenu()" href="#experience">Experience</a>
-        <a onclick="toggleMenu()" href="#services">Services</a>
-        <a onclick="toggleMenu()" href="#projects">Projects</a>
-        <a onclick="toggleMenu()" href="#achievements">Achievements</a>
-        <a onclick="toggleMenu()" href="#contact">Contact</a>
-    </div>
 
-    <section class="home .move-down-home-section" id="home">
-        <div class="home-content">
-            <h3>Hello I'm</h3>
-            <h1>Hariharaan S</h1>
-            <p class="sub-head">I'm a <span class="auto-typed"></span></p>
-
-            <div class="social-media">
-                <a href="https://twitter.com/s_hariharaan" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://github.com/Hariharaan-S" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/hariharaan-s-ba9242233/" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="section-label">Full Stack Developer</p>
+                <h1>Hariharaan S</h1>
+                <p class="hero-subtitle">I'm a <span class="auto-typed"></span></p>
+                <p class="hero-description">Building scalable web applications and cloud-native solutions with clean code and thoughtful design.</p>
+                <div class="hero-actions">
+                    <a href="Resume Hariharaan S.pdf" class="btn btn-primary" download>Download CV</a>
+                    <div class="social-links">
+                        <a href="https://github.com/Hariharaan-S" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/hariharaan-s-ba9242233/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/s_hariharaan" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
             </div>
-            <a href="Resume Hariharaan S.pdf" class="btn" download>Download CV</a>
-        </div>
-        <div class="profession-container">
-            <div class="profile-overlay"></div>
-            <div class="profile-image-container">
-                <img class="profile-image" src="images/profile.jpg" alt="" srcset="">
+            <div class="hero-image">
+                <div class="image-frame">
+                    <img src="images/profile.jpg" alt="Hariharaan S">
+                </div>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- about section -->
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <div class="about-me-container">
-                <div class="about-me-content">
-                    <p>&ensp; I am Hariharaan, a recent graduate from St. Joseph's College of Engineering with a CGPA of
-                        9.13.
-                        Passionate about Full Stack Development and DevOps, I was a member of "Unique Coders" and a
-                        Finalist in the Smart India Hackathon 2022 and 2024, with the latter held at IIT Gandhinagar.
-                        I’ve interned as a Full-stack Developer at ProjectSense Org, where I focused on building
-                        seamless user interfaces and robust back-end solutions.
-
-                        Currently, I am interning at Accenture as a Full-stack Developer, gaining hands-on experience in
-                        enterprise-level application development and DevOps practices within agile teams.
-
-                        I hold a certification in Cloud Computing and actively participate in hackathons like the VIT
-                        Chennai Cyber Hackathon. I am committed to growing as a Full Stack Developer with a strong
-                        interest in DevOps.
-                    </p>
-                    <div class="skills-container">
-                        <h3 class="skills-title">Take a look at my areas of expertise.</h3>
-                        <div class="wrapper">
-                            <div class="item item1">
-                                <img class="skill-svg" src="images/HTML5.svg" alt="">
-                            </div>
-                            <div class="item item2">
-                                <img class="skill-svg" src="images/CSS3.svg" alt="">
-                            </div>
-                            <div class="item item3">
-                                <img class="skill-svg" src="images/JavaScript.svg" alt="">
-                            </div>
-                            <div class="item item4">
-                                <img class="skill-svg" src="images/jQuery.svg" alt="">
-                            </div>
-                            <div class="item item5">
-                                <img class="skill-svg" src="images/AWS.svg" alt="">
-                            </div>
-                            <div class="item item6">
-                                <img class="skill-svg" src="images/Node.js.svg" alt="">
-                            </div>
-                            <div class="item item7">
-                                <img class="skill-svg" src="images/Express.svg" alt="">
-                            </div>
-                            <div class="item item8">
-                                <img class="skill-svg" src="images/MongoDB.svg" alt="">
-                            </div>
-                            <div class="item item9">
-                                <img class="skill-svg" src="images/React.svg" alt="">
-                            </div>
-                            <div class="item item10">
-                                <img class="skill-svg" src="images/MySQL.svg" alt="">
-                            </div>
-                            <div class="item item11">
-                                <img class="skill-svg" src="images/Flask.svg" alt="">
-                            </div>
-                            <div class="item item12">
-                                <img class="skill-svg" src="images/Git.svg" alt="">
-                            </div>
-                            <div class="item item13">
-                                <img class="skill-svg" src="images/GitHub.svg" alt="">
-                            </div>
-                            <div class="item item14">
-                                <img class="skill-svg" src="images/Docker.svg" alt="">
-                            </div>
-                            <div class="item item15">
-                                <img class="skill-svg" src="images/Kubernetes.svg" alt="">
-                            </div>
-                            <div class="item item16">
-                                <img class="skill-svg" src="images/Java.svg" alt="">
-                            </div>
-                            <div class="item item17">
-                                <img class="skill-svg" src="images/Python.svg" alt="">
-                            </div>
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">About</p>
+                <h2 class="section-title">Who I Am</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am Hariharaan, a recent graduate from St. Joseph's College of Engineering with a CGPA of 9.13. Passionate about Full Stack Development and DevOps, I was a member of "Unique Coders" and a Finalist in the Smart India Hackathon 2022 and 2024, with the latter held at IIT Gandhinagar.</p>
+                    <p>I've interned as a Full-stack Developer at ProjectSense Org, where I focused on building seamless user interfaces and robust back-end solutions. Currently, I am interning at Accenture as a Full-stack Developer, gaining hands-on experience in enterprise-level application development and DevOps practices within agile teams.</p>
+                    <p>I hold a certification in Cloud Computing and actively participate in hackathons like the VIT Chennai Cyber Hackathon. I am committed to growing as a Full Stack Developer with a strong interest in DevOps.</p>
+                </div>
+                <div class="skills-section">
+                    <p class="skills-label">Technologies I work with</p>
+                    <div class="skills-marquee">
+                        <div class="skills-track">
+                            <img src="images/HTML5.svg" alt="HTML5">
+                            <img src="images/CSS3.svg" alt="CSS3">
+                            <img src="images/JavaScript.svg" alt="JavaScript">
+                            <img src="images/jQuery.svg" alt="jQuery">
+                            <img src="images/React.svg" alt="React">
+                            <img src="images/Node.js.svg" alt="Node.js">
+                            <img src="images/Express.svg" alt="Express">
+                            <img src="images/MongoDB.svg" alt="MongoDB">
+                            <img src="images/MySQL.svg" alt="MySQL">
+                            <img src="images/Python.svg" alt="Python">
+                            <img src="images/Java.svg" alt="Java">
+                            <img src="images/Flask.svg" alt="Flask">
+                            <img src="images/AWS.svg" alt="AWS">
+                            <img src="images/Docker.svg" alt="Docker">
+                            <img src="images/Kubernetes.svg" alt="Kubernetes">
+                            <img src="images/Git.svg" alt="Git">
+                            <img src="images/GitHub.svg" alt="GitHub">
+                            <!-- duplicate for seamless loop -->
+                            <img src="images/HTML5.svg" alt="HTML5">
+                            <img src="images/CSS3.svg" alt="CSS3">
+                            <img src="images/JavaScript.svg" alt="JavaScript">
+                            <img src="images/jQuery.svg" alt="jQuery">
+                            <img src="images/React.svg" alt="React">
+                            <img src="images/Node.js.svg" alt="Node.js">
+                            <img src="images/Express.svg" alt="Express">
+                            <img src="images/MongoDB.svg" alt="MongoDB">
+                            <img src="images/MySQL.svg" alt="MySQL">
+                            <img src="images/Python.svg" alt="Python">
+                            <img src="images/Java.svg" alt="Java">
+                            <img src="images/Flask.svg" alt="Flask">
+                            <img src="images/AWS.svg" alt="AWS">
+                            <img src="images/Docker.svg" alt="Docker">
+                            <img src="images/Kubernetes.svg" alt="Kubernetes">
+                            <img src="images/Git.svg" alt="Git">
+                            <img src="images/GitHub.svg" alt="GitHub">
                         </div>
                     </div>
                 </div>
@@ -147,245 +129,234 @@
         </div>
     </section>
 
-    <!-- Experience Section Design-->
-    <section class="experience" id="experience">
-        <h2 class="heading">My <span>Experience</span></h2>
-        <div class="experience-container">
-            <div class="experience-box">
-                <img class="intern_logo" src="images/Accenture-Logo.png" alt="" srcset="">
-                <div class="experience-description">
-                    <h3>Intern - App Developer</h3>
-                    <p>Accenture, India, Feb 2025 - Jun 2025</p>
-                    <p>Trained in foundational concepts of Software Development Life Cycle (SDLC), web development
-                        technologies, and cloud computing platforms. Assigned to live project tasks involving feature
-                        development, bug fixing, and code reviews within an agile team environment.</p>
-                </div>
+    <!-- Experience -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Experience</p>
+                <h2 class="section-title">Where I've Worked</h2>
             </div>
-            <div class="experience-box">
-                <img class="intern_logo" src="images\\intern1_logo.jpeg" alt="" srcset="">
-                <div class="experience-description">
-                    <h3>Intern - Backend, Microservices and Frontend Development</h3>
-                    <p>ProjectSense Org, Dec 2023 - Jan 2024</p>
-                    <p>Had a rewarding experience serving as a Full-Stack Developer Intern at the prestigious company
-                        'ProjectSense.' During this time, I immersed myself in learning a diverse range of web
-                        technologies and successfully contributed to the development of a product that met specified
-                        requirements.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- service section design -->
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Web Development.</h3>
-                <p>Involves crafting websites and web applications through front-end design, back-end
-                    programming, and technology integration. Employ HTML, CSS, JavaScript, and server-side
-                    languages to create user-friendly, responsive online experiences.</p>
-                <!-- <a href="/services/Web Development" class="btn">Read More</a> -->
-            </div>
-            <div class="services-box">
-                <i class="fa-solid fa-laptop"></i>
-                <h3>ML Development.</h3>
-                <p>
-                    Machine learning (ML) development is the process of designing, training, and deploying machine
-                    learning models and algorithms. Work with data to create predictive, classification,
-                    or clustering models, enabling systems to make data-driven decisions.</p>
-                <!-- <a href="/services/ML Development" class="btn">Read More</a> -->
-            </div>
-            <div class="services-box">
-                <i class="fa-solid fa-tv"></i>
-                <h3>Competitive Coder.</h3>
-                <p>Highly skilled in Java's object-oriented features, with a track record of solving numerous complex
-                    problems on platforms like Hackerrank and LeetCode. Eager to continue pushing boundaries and
-                    mastering advanced Java development to tackle challenges.</p>
-                <!-- <a href="/services/Competitive Coder" class="btn">Read More</a> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- portfolio projects design -->
-    <section class="portfolio" id="projects">
-        <h2 class="heading">Latest <span>Project</span></h2>
-        <div class="project-content">
-            <div class="project-slide">
-                <div class="project-logo-container">
-                    <img src="images\\socialmediamonitoring.png" alt="">
-                    <div class="project-box">
-                        <h4>Social Media Monitoring</h4>
-                        <p>Safeguarding online integrity by identifying and
-                            reporting false and violation-inducing messages, making social media a safer place.
-                        </p>
-
-                        <a href="/projects/Social Media Monitoring Tool"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="images/Accenture-Logo.png" alt="Accenture" class="company-logo">
+                            <div>
+                                <h3>Intern — App Developer</h3>
+                                <p class="timeline-meta">Accenture, India · Feb 2025 – Jun 2025</p>
+                            </div>
+                        </div>
+                        <p>Trained in foundational concepts of Software Development Life Cycle (SDLC), web development technologies, and cloud computing platforms. Assigned to live project tasks involving feature development, bug fixing, and code reviews within an agile team environment.</p>
                     </div>
                 </div>
-            </div>
-            <div class="project-slide">
-                <div class="project-logo-container">
-                    <img src="images\\trashtriage.png" alt="">
-                    <div class="project-box">
-                        <h4>TrashTriage</h4>
-                        <p>TrashTriage is a groundbreaking project dedicated to waste classification and
-                            eco-friendly
-                            recycling guidance. It employs innovative technology to identify waste types and
-                            provide
-                            sustainable disposal methods.</p>
-
-                        <a href="/projects/Trash_Triage"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-slide">
-                <div class="project-logo-container">
-                    <img src="images\\BotonAI.png" alt="">
-                    <div class="project-box">
-                        <h4>BotonAI</h4>
-                        <p>Introducing BotonAI: A medicinal plant authenticity checker, swiftly identifying
-                            fakes
-                            and
-                            generating comprehensive reports for informed decision-making.</p>
-
-                        <a href="/projects/Boton AI"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-slide">
-                <div class="project-logo-container">
-                    <img src="images\\taskflow.png" alt="">
-                    <div class="project-box">
-                        <h4>TaskFlow</h4>
-                        <p>Experience the beauty of simplicity with TaskFlow, the minimalist task management
-                            tool
-                            designed
-                            to help you stay organized and productive.</p>
-
-                        <a href="/projects/TaskFlow - A Task Management App"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="images/intern1_logo.jpeg" alt="ProjectSense" class="company-logo">
+                            <div>
+                                <h3>Intern — Full Stack Developer</h3>
+                                <p class="timeline-meta">ProjectSense Org · Dec 2023 – Jan 2024</p>
+                            </div>
+                        </div>
+                        <p>Had a rewarding experience serving as a Full-Stack Developer Intern at the prestigious company 'ProjectSense.' During this time, I immersed myself in learning a diverse range of web technologies and successfully contributed to the development of a product that met specified requirements.</p>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </section>
 
-    <!-- achievements design -->
-    <section id="achievements" class="testimonial-container">
-        <h2 class="heading">My <span>Achievements</span></h2>
-        <div class="testimonial-wrapper">
-            <div class="testimonial-box mySwiperAchievements">
-                <div class="testimonial-content swiper-wrapper">
-                    <div class="testimonial-slide swiper-slide">
-                        <img width="80%" height="80%" src="images/SIH 2024.jpg" alt="">
-                        <h3>Finalist in SIH 2024</h3>
-                        <p> Being a finalist in SIH 2024 was a transformative experience. The intense competition
-                            sharpened my skills and strengthened my resilience. Collaborating with like-minded
-                            individuals expanded my perspective and led to lasting connections. Most importantly, it
-                            taught me to view challenges as opportunities for growth.
-                        </p>
+    <!-- Services -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Services</p>
+                <h2 class="section-title">What I Do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Crafting websites and web applications through front-end design, back-end programming, and technology integration for user-friendly, responsive online experiences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>ML Development</h3>
+                    <p>Designing, training, and deploying machine learning models and algorithms to enable systems to make data-driven decisions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <h3>Competitive Coding</h3>
+                    <p>Highly skilled in Java's object-oriented features, with a track record of solving complex problems on platforms like Hackerrank and LeetCode.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Projects</p>
+                <h2 class="section-title">Selected Work</h2>
+            </div>
+            <div class="projects-grid">
+                <a href="/projects/Social Media Monitoring Tool" class="project-card">
+                    <div class="project-image">
+                        <img src="images/socialmediamonitoring.png" alt="Social Media Monitoring">
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img width="80%" height="80%" src="images/SIH 2022.png" alt="">
-                        <h3>Finalist in SIH 2022</h3>
-                        <p>Being a finalist in SIH 2024 was a transformative journey. The intense competition pushed me
-                            to excel, fostering resilience and determination. Interacting with like-minded individuals
-                            broadened my horizons, fostering lifelong friendships. The experience instilled in me the
-                            value of perseverance and the importance of embracing challenges as opportunities for
-                            growth.</p>
+                    <div class="project-info">
+                        <h3>Social Media Monitoring</h3>
+                        <p>Safeguarding online integrity by identifying and reporting false and violation-inducing messages.</p>
+                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/cyberx.jpeg" alt="">
-                        <h3>Finalist in CyberX Hackathon -VIT Chennai in collaboration with Greater Chennai Corporation
-                        </h3>
-                        <p>My team has recently shortlisted in the top 50 teams among 450+ teams across India, for the
-                            CyberX HACKATHON, a two-day hackathon organized by Greater Chennai Police and VIT Chennai
-                            This hackathon provided a great insights of the various problems and issues faced by our
-                            Police Department in terms of Cyber Attack.
-                            It was a great opportunity to participate and learn from other talented developers.</p>
+                </a>
+                <a href="/projects/Trash_Triage" class="project-card">
+                    <div class="project-image">
+                        <img src="images/trashtriage.png" alt="TrashTriage">
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/hacktopia.jpg" alt="">
-                        <h3>Finalist in Hacktopia Hackathon -GNI University</h3>
-                        <p>Becoming a finalist at Hacktopia 2022 was a pivotal experience. The fierce competition drove
-                            me to excel, nurturing my resilience and determination. Collaborating with like-minded peers
-                            expanded my horizons and forged lasting connections. This journey emphasized the
-                            significance of perseverance and the transformational potential within challenges.</p>
+                    <div class="project-info">
+                        <h3>TrashTriage</h3>
+                        <p>Waste classification and eco-friendly recycling guidance using innovative technology.</p>
+                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/CSI Award.jpg" alt="">
-                        <h3>Best Innovative Student Award 2024 - CSI Kanchipuram Chapter</h3>
-                        <p>Delighted to be honored with the Best Innovation Project Award by the Computer Society of
-                            India, Kancheepuram Chapter!
-                            🏆A special thanks to our CSI coordinator, <b>K.R.RAGHI NAIR</b> mam, whose dedication and
-                            guidance propelled me.
-                            Her visionary leadership and passion for innovation inspire me to excel.
-                            Thank you for being an exceptional mentor and believing in my potential every step of the
-                            way!</p>
+                </a>
+                <a href="/projects/Boton AI" class="project-card">
+                    <div class="project-image">
+                        <img src="images/BotonAI.png" alt="BotonAI">
+                    </div>
+                    <div class="project-info">
+                        <h3>BotonAI</h3>
+                        <p>A medicinal plant authenticity checker that identifies fakes and generates comprehensive reports.</p>
+                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="/projects/TaskFlow - A Task Management App" class="project-card">
+                    <div class="project-image">
+                        <img src="images/taskflow.png" alt="TaskFlow">
+                    </div>
+                    <div class="project-info">
+                        <h3>TaskFlow</h3>
+                        <p>A minimalist task management tool designed to help you stay organized and productive.</p>
+                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section achievements" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Achievements</p>
+                <h2 class="section-title">Highlights</h2>
+            </div>
+            <div class="achievements-slider mySwiperAchievements">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide achievement-card">
+                        <img src="images/SIH 2024.jpg" alt="SIH 2024">
+                        <div class="achievement-content">
+                            <h3>Finalist in SIH 2024</h3>
+                            <p>Being a finalist in SIH 2024 was a transformative experience. The intense competition sharpened my skills and strengthened my resilience. Collaborating with like-minded individuals expanded my perspective and led to lasting connections.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide achievement-card">
+                        <img src="images/SIH 2022.png" alt="SIH 2022">
+                        <div class="achievement-content">
+                            <h3>Finalist in SIH 2022</h3>
+                            <p>Being a finalist in SIH 2022 was a transformative journey. The intense competition pushed me to excel, fostering resilience and determination. Interacting with like-minded individuals broadened my horizons.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide achievement-card">
+                        <img src="images/cyberx.jpeg" alt="CyberX Hackathon">
+                        <div class="achievement-content">
+                            <h3>Finalist in CyberX Hackathon</h3>
+                            <p>Shortlisted in the top 50 teams among 450+ teams across India for the CyberX HACKATHON organized by Greater Chennai Police and VIT Chennai.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide achievement-card">
+                        <img src="images/hacktopia.jpg" alt="Hacktopia">
+                        <div class="achievement-content">
+                            <h3>Finalist in Hacktopia Hackathon</h3>
+                            <p>Becoming a finalist at Hacktopia 2022 was a pivotal experience. The fierce competition drove me to excel, nurturing my resilience and determination.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide achievement-card">
+                        <img src="images/CSI Award.jpg" alt="CSI Award">
+                        <div class="achievement-content">
+                            <h3>Best Innovative Student Award 2024</h3>
+                            <p>Honored with the Best Innovation Project Award by the Computer Society of India, Kancheepuram Chapter. A special thanks to our CSI coordinator, K.R.RAGHI NAIR mam, whose dedication and guidance propelled me.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="swiper-button-next achievements-button-next"></div>
-                <div class="swiper-button-prev achievements-button-prev"></div>
                 <div class="swiper-pagination achievements-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- contact section design -->
-    <section class="contact" id="contact">
-        <div class="form">
-            <form onsubmit="sendMail()">
-                <h2 class="heading">Contact <span>Me!</span></h2>
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name" name="name" id="name">
-                    <input type="email" placeholder="Email Address" name="email" id="email">
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="section-label">Contact</p>
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="contact-description">Have a project in mind or want to discuss an opportunity? I'd love to hear from you.</p>
                 </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Mobile Number" name="phone" id="phone">
-                    <input type="text" placeholder="Email Subject" name="subject" id="subject">
-                </div>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" id="submit_btn" class="btn">
-            </form>
+                <form class="contact-form" onsubmit="sendMail(); return false;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project inquiry">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit_btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <!-- footer-design -->
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-text">
-                <p>Copyright &copy; 2023 by Hariharaan S | All rights reserved</p>
-            </div>
-            <div class="footer-iconTop">
-                <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
-            </div>
+        <div class="container footer-content">
+            <p class="footer-text">Copyright &copy; 2023 by Hariharaan S. All rights reserved.</p>
+            <a href="#home" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
         </div>
-
     </footer>
 
-
-    <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!-- Send Mail using SMTP.js -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <!-- ------------- -->
-    <!-- Sweetalert2 for mesage dialog box -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js\\index.js"></script>
+    <script src="js/index.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-        var typed = new Typed('.auto-typed', {
-            strings: ['Full Stack Developer', 'Cloud Practitioner', 'Devops Enthusiast'],
-            typeSpeed: 100,
-            backSpeed: 100,
+        new Typed('.auto-typed', {
+            strings: ['Full Stack Developer', 'Cloud Practitioner', 'DevOps Enthusiast'],
+            typeSpeed: 80,
+            backSpeed: 50,
             loop: true
         });
     </script>

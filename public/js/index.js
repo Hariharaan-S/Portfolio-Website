@@ -1,100 +1,81 @@
-/*============menu icon navbar================*/
-let navbar = document.querySelector(".navbar");
-let menuBar = document.getElementById("navbar-items-container");
-let darken = document.getElementById("darken");
+/* Navigation scroll behavior */
+const header = document.querySelector(".header");
+const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const sections = document.querySelectorAll("section[id]");
 
-/*================Toggle the Background and Menu Icon when click outside=====================*/
-// function closeMenu(event) {
-//   if (!menuBar.contains(event.target) && event.target !== menuIcon) {
-//       menuBar.classList.remove('active');
-//   }
-// }
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 50);
 
-// document.addEventListener('click', closeMenu);
-
-/*============scroll section active link================*/
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("header nav a");
-window.onscroll = () => {
   sections.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 120;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
 
     if (top >= offset && top < offset + height) {
-      navLinks.forEach((links) => {
-        links.classList.remove("active");
-        document
-          .querySelector("header nav a[href*=" + id + "]")
-          .classList.add("active");
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
       });
     }
   });
+});
 
-  /*============sticky navbar================*/
-  let header = document.querySelector(".header");
-  header.classList.toggle("sticky", window.scrollY > 100);
+/* Mobile menu toggle */
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  mobileMenu.classList.toggle("open");
+});
 
-  /*============remove menu icon navbar when click navbar link (scroll)================*/
-  navbar.classList.remove("active");
-};
-/*============swiper================*/
+mobileMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menuToggle.classList.remove("active");
+    mobileMenu.classList.remove("open");
+  });
+});
 
-const achievementsSwiper = new Swiper('.mySwiperAchievements', {
+/* Achievements Swiper */
+const achievementsSwiper = new Swiper(".mySwiperAchievements", {
   loop: true,
-  spaceBetween: 20,
+  spaceBetween: 24,
   slidesPerView: 1,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
-  navigation: {
-    nextEl: '.achievements-button-next',
-    prevEl: '.achievements-button-prev',
-  },
   pagination: {
-    el: '.achievements-pagination',
+    el: ".achievements-pagination",
     clickable: true,
   },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }
-  }
+  speed: 600,
 });
 
+/* Scroll Reveal */
+ScrollReveal({ distance: "30px", duration: 800, easing: "ease-out", reset: false });
+ScrollReveal().reveal(".hero-content", { origin: "left", delay: 100 });
+ScrollReveal().reveal(".hero-image", { origin: "right", delay: 200 });
+ScrollReveal().reveal(".section-header", { origin: "top", interval: 100 });
+ScrollReveal().reveal(".timeline-item", { origin: "left", interval: 150 });
+ScrollReveal().reveal(".service-card", { origin: "bottom", interval: 100 });
+ScrollReveal().reveal(".project-card", { origin: "bottom", interval: 100 });
+ScrollReveal().reveal(".achievement-card", { origin: "bottom" });
+ScrollReveal().reveal(".contact-info, .contact-form", { origin: "bottom", interval: 150 });
 
-/*============Scroll Reveal================*/
-ScrollReveal({ distance: "80px", duration: 2000, delay: 200 });
-ScrollReveal().reveal(".home-content, .heading, .experience", {
-  origin: "top",
-});
-ScrollReveal().reveal(
-  ".home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact .form",
-  { origin: "bottom" }
-);
-ScrollReveal().reveal(".home-content h1, .about-img img", { origin: "left" });
-ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
-  origin: "right",
-});
-
-/*==============Send Mail=====================*/
+/* Send Mail */
 async function sendMail() {
-  var success = await fetch(
+  const success = await fetch(
     "/send?name=" +
-    document.getElementById("name").value +
-    "&email=" +
-    document.getElementById("email").value +
-    "&phone=" +
-    document.getElementById("phone").value +
-    "&message=" +
-    document.getElementById("message").value
+      document.getElementById("name").value +
+      "&email=" +
+      document.getElementById("email").value +
+      "&phone=" +
+      document.getElementById("phone").value +
+      "&message=" +
+      document.getElementById("message").value
   );
   if (success.status === 200) {
     Email.send({
@@ -105,23 +86,11 @@ async function sendMail() {
       To: document.getElementById("email").value,
       Subject: "Successfully Submitted the Query",
       Body: "Thank you for reaching me. I will see to the query and turn in within 2 or 3 working days.",
-    }).then((window.location.href = "/"));
+    }).then(() => (window.location.href = "/"));
   }
 }
 
-var date = new Date();
-var year = date.getFullYear();
-document.querySelector(
-  ".footer-text"
-).innerHTML = `<p>Copyright &copy; ${year} by Hariharaan S | All rights reserved</p>`;
-
-//============================Menu move down on click Hamburger Icon=============================//
-
-const menuIcon = document.querySelector('.menu-icon');
-const navBarMobile = document.querySelector('.navbar-mobile');
-menuIcon.addEventListener('click', () => {
-  if (navBarMobile.style.display === 'flex')
-    navBarMobile.style.display = 'none';
-  else
-    navBarMobile.style.display = 'flex';
-})
+/* Dynamic copyright year */
+const year = new Date().getFullYear();
+document.querySelector(".footer-text").innerHTML =
+  `Copyright &copy; ${year} by Hariharaan S. All rights reserved.`;
