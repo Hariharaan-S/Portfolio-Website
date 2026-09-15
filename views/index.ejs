@@ -1,365 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hariharaan S — Full Stack Developer</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <script src="https://kit.fontawesome.com/c1b3701aff.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="/" class="logo">Hari<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-        <div class="mobile-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c1b3701aff.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="top-nav" aria-label="Primary navigation">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-left">
+          <a class="active" href="#home">Home</a><a href="#about">About</a
+          ><a href="#services">Service</a>
         </div>
+        <a class="brand" href="#" aria-label="Hariharaan home">
+          <span><img src="images/HS.png" alt="HS" /></span
+          ><strong>HARI<span style="color: var(--blue)">.</span></strong>
+        </a>
+        <div class="nav-right">
+          <a href="Resume Hariharaan S.pdf" download>Resume</a
+          ><a href="#projects">Project</a><a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <div class="mobile-nav" aria-hidden="true">
+        <a href="#home">Home</a><a href="#about">About</a
+        ><a href="#services">Service</a
+        ><a href="Resume Hariharaan S.pdf" download>Resume</a
+        ><a href="#projects">Project</a><a href="#contact">Contact</a>
+      </div>
     </header>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <p class="section-label">Full Stack Developer</p>
-                <h1>Hariharaan S</h1>
-                <p class="hero-subtitle">I'm a <span class="auto-typed"></span></p>
-                <p class="hero-description">Building scalable web applications and cloud-native solutions with clean code and thoughtful design.</p>
-                <div class="hero-actions">
-                    <a href="Resume Hariharaan S.pdf" class="btn btn-primary" download>Download CV</a>
-                    <div class="social-links">
-                        <a href="https://github.com/Hariharaan-S" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/hariharaan-s-ba9242233/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://twitter.com/s_hariharaan" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-frame">
-                    <img src="images/profile.jpg" alt="Hariharaan S">
-                </div>
-            </div>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-intro">
+          <small>Hello!</small>
+          <h1>I’m <span>Hariharaan,</span><br />Full Stack Developer</h1>
         </div>
-    </section>
-
-    <!-- About -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">About</p>
-                <h2 class="section-title">Who I Am</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I am Hariharaan, a recent graduate from St. Joseph's College of Engineering with a CGPA of 9.13. Passionate about Full Stack Development and DevOps, I was a member of "Unique Coders" and a Finalist in the Smart India Hackathon 2022 and 2024, with the latter held at IIT Gandhinagar.</p>
-                    <p>I've interned as a Full-stack Developer at ProjectSense Org, where I focused on building seamless user interfaces and robust back-end solutions. Currently, I am interning at Accenture as a Full-stack Developer, gaining hands-on experience in enterprise-level application development and DevOps practices within agile teams.</p>
-                    <p>I hold a certification in Cloud Computing and actively participate in hackathons like the VIT Chennai Cyber Hackathon. I am committed to growing as a Full Stack Developer with a strong interest in DevOps.</p>
-                </div>
-                <div class="skills-section">
-                    <p class="skills-label">Technologies I work with</p>
-                    <div class="skills-marquee">
-                        <div class="skills-track">
-                            <img src="images/HTML5.svg" alt="HTML5">
-                            <img src="images/CSS3.svg" alt="CSS3">
-                            <img src="images/JavaScript.svg" alt="JavaScript">
-                            <img src="images/jQuery.svg" alt="jQuery">
-                            <img src="images/React.svg" alt="React">
-                            <img src="images/Node.js.svg" alt="Node.js">
-                            <img src="images/Express.svg" alt="Express">
-                            <img src="images/MongoDB.svg" alt="MongoDB">
-                            <img src="images/MySQL.svg" alt="MySQL">
-                            <img src="images/Python.svg" alt="Python">
-                            <img src="images/Java.svg" alt="Java">
-                            <img src="images/Flask.svg" alt="Flask">
-                            <img src="images/AWS.svg" alt="AWS">
-                            <img src="images/Docker.svg" alt="Docker">
-                            <img src="images/Kubernetes.svg" alt="Kubernetes">
-                            <img src="images/Git.svg" alt="Git">
-                            <img src="images/GitHub.svg" alt="GitHub">
-                            <!-- duplicate for seamless loop -->
-                            <img src="images/HTML5.svg" alt="HTML5">
-                            <img src="images/CSS3.svg" alt="CSS3">
-                            <img src="images/JavaScript.svg" alt="JavaScript">
-                            <img src="images/jQuery.svg" alt="jQuery">
-                            <img src="images/React.svg" alt="React">
-                            <img src="images/Node.js.svg" alt="Node.js">
-                            <img src="images/Express.svg" alt="Express">
-                            <img src="images/MongoDB.svg" alt="MongoDB">
-                            <img src="images/MySQL.svg" alt="MySQL">
-                            <img src="images/Python.svg" alt="Python">
-                            <img src="images/Java.svg" alt="Java">
-                            <img src="images/Flask.svg" alt="Flask">
-                            <img src="images/AWS.svg" alt="AWS">
-                            <img src="images/Docker.svg" alt="Docker">
-                            <img src="images/Kubernetes.svg" alt="Kubernetes">
-                            <img src="images/Git.svg" alt="Git">
-                            <img src="images/GitHub.svg" alt="GitHub">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <p class="recommendation">
+          Hari’s exceptional web development<br />ensure our webapp’s success<br /><strong
+            >Highly Recommended</strong
+          >
+        </p>
+        <div class="hero-portrait">
+          <img src="images/profile.png" alt="Portrait of Hariharaan" />
         </div>
-    </section>
-
-    <!-- Experience -->
-    <section class="section experience" id="experience">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">Experience</p>
-                <h2 class="section-title">Where I've Worked</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <img src="images/Accenture-Logo.png" alt="Accenture" class="company-logo">
-                            <div>
-                                <h3>Intern — App Developer</h3>
-                                <p class="timeline-meta">Accenture, India · Feb 2025 – Jun 2025</p>
-                            </div>
-                        </div>
-                        <p>Trained in foundational concepts of Software Development Life Cycle (SDLC), web development technologies, and cloud computing platforms. Assigned to live project tasks involving feature development, bug fixing, and code reviews within an agile team environment.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <img src="images/intern1_logo.jpeg" alt="ProjectSense" class="company-logo">
-                            <div>
-                                <h3>Intern — Full Stack Developer</h3>
-                                <p class="timeline-meta">ProjectSense Org · Dec 2023 – Jan 2024</p>
-                            </div>
-                        </div>
-                        <p>Had a rewarding experience serving as a Full-Stack Developer Intern at the prestigious company 'ProjectSense.' During this time, I immersed myself in learning a diverse range of web technologies and successfully contributed to the development of a product that met specified requirements.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="rating">
+          <div class="stars">★★★★★</div>
+          <strong>1.5+ Years</strong><small>Experience</small>
         </div>
-    </section>
+      </section>
+      <section class="services" id="services">
+        <div class="services-heading">
+          <h2>My <span>Services</span></h2>
+          <p>
+            I build scalable digital solutions by combining modern technologies, machine learning, and strong problem-solving skills to create efficient, reliable, and user-focused experiences.
 
-    <!-- Services -->
-    <section class="section services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">Services</p>
-                <h2 class="section-title">What I Do</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Crafting websites and web applications through front-end design, back-end programming, and technology integration for user-friendly, responsive online experiences.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>ML Development</h3>
-                    <p>Designing, training, and deploying machine learning models and algorithms to enable systems to make data-driven decisions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-terminal"></i></div>
-                    <h3>Competitive Coding</h3>
-                    <p>Highly skilled in Java's object-oriented features, with a track record of solving complex problems on platforms like Hackerrank and LeetCode.</p>
-                </div>
-            </div>
+          </p>
         </div>
-    </section>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Web Development</h3>
+            <p>
+              I develop responsive and scalable web applications using modern frontend and backend technologies, with a focus on clean architecture, seamless user experiences, and reliable performance.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>ML Development</h3>
+            <p>
+              I build machine learning solutions that transform data into meaningful insights, from developing and fine-tuning models to integrating them into practical applications.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Competitive Coding</h3>
+            <p>
+              I solve complex programming problems using efficient algorithms and data structures, focusing on logical thinking, optimization, and writing clean, effective code.
+            </p>
+          </article>
+        </div>
+        <div class="service-art" aria-hidden="true">◌</div>
+      </section>
+      <section class="experience" id="about">
+        <h2>My <span>Work Experience</span></h2>
+        <div class="experience-list">
+          <article>
+            <div>
+              <h3>Accenture, Bengaluru</h3>
+              <time>Oct 2025 - Present</time>
+            </div>
+            <i class="dot blue"></i>
+            <div>
+              <h3>Packaged App Development<br />Associate</h3>
+              <p>
+                Trained in foundational concepts, assigned to live project tasks
+                involving feature development, bug fixing, and code reviews
+                within an agile environment.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div>
+              <h3>ProjectSense, Remote</h3>
+              <time>Dec 2023 - Jan 2024</time>
+            </div>
+            <i class="dot dark"></i>
+            <div>
+              <h3>Intern - Full Stack Developer</h3>
+              <p>
+                Trained in foundational concepts, assigned to live project tasks
+                involving feature development, bug fixing, and code reviews
+                within an agile environment.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="unique" aria-labelledby="unique-heading">
+        <div class="unique-heading">
+          <h2 id="unique-heading">How I am <span>Unique?</span></h2>
+          <p>
+            Recognized for technical excellence through national-level hackathons,
+            competitive challenges, and innovative problem-solving, showcasing my
+            ability to collaborate, build impactful solutions, and perform under
+            challenging environments.
+          </p>
+        </div>
 
-    <!-- Projects -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">Projects</p>
-                <h2 class="section-title">Selected Work</h2>
-            </div>
-            <div class="projects-grid">
-                <a href="/projects/Social Media Monitoring Tool" class="project-card">
-                    <div class="project-image">
-                        <img src="images/socialmediamonitoring.png" alt="Social Media Monitoring">
-                    </div>
-                    <div class="project-info">
-                        <h3>Social Media Monitoring</h3>
-                        <p>Safeguarding online integrity by identifying and reporting false and violation-inducing messages.</p>
-                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="/projects/Trash_Triage" class="project-card">
-                    <div class="project-image">
-                        <img src="images/trashtriage.png" alt="TrashTriage">
-                    </div>
-                    <div class="project-info">
-                        <h3>TrashTriage</h3>
-                        <p>Waste classification and eco-friendly recycling guidance using innovative technology.</p>
-                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="/projects/Boton AI" class="project-card">
-                    <div class="project-image">
-                        <img src="images/BotonAI.png" alt="BotonAI">
-                    </div>
-                    <div class="project-info">
-                        <h3>BotonAI</h3>
-                        <p>A medicinal plant authenticity checker that identifies fakes and generates comprehensive reports.</p>
-                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="/projects/TaskFlow - A Task Management App" class="project-card">
-                    <div class="project-image">
-                        <img src="images/taskflow.png" alt="TaskFlow">
-                    </div>
-                    <div class="project-info">
-                        <h3>TaskFlow</h3>
-                        <p>A minimalist task management tool designed to help you stay organized and productive.</p>
-                        <span class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+        <div class="unique-carousel" aria-live="polite">
+          <div class="unique-carousel-track">
+            <article class="achievement-card is-active">
+              <div class="achievement-image-wrap">
+                <img
+                  src="images/SIH 2024.jpg"
+                  alt="Smart India Hackathon 2024"
+                />
+              </div>
+              <div class="achievement-content">
+                <div class="achievement-badge">Finalist</div>
+                <h3>Smart India Hackathon — 2024</h3>
+                <p class="achievement-meta">
+                  Gujarat Government · December 2024
+                </p>
+                <p>
+                  Selected as a finalist in Smart India Hackathon 2024, organized in
+                  collaboration with the Gujarat Government, recognizing innovative
+                  problem-solving and technical capabilities.
+                </p>
+              </div>
+            </article>
 
-    <!-- Achievements -->
-    <section class="section achievements" id="achievements">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">Achievements</p>
-                <h2 class="section-title">Highlights</h2>
-            </div>
-            <div class="achievements-slider mySwiperAchievements">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide achievement-card">
-                        <img src="images/SIH 2024.jpg" alt="SIH 2024">
-                        <div class="achievement-content">
-                            <h3>Finalist in SIH 2024</h3>
-                            <p>Being a finalist in SIH 2024 was a transformative experience. The intense competition sharpened my skills and strengthened my resilience. Collaborating with like-minded individuals expanded my perspective and led to lasting connections.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide achievement-card">
-                        <img src="images/SIH 2022.png" alt="SIH 2022">
-                        <div class="achievement-content">
-                            <h3>Finalist in SIH 2022</h3>
-                            <p>Being a finalist in SIH 2022 was a transformative journey. The intense competition pushed me to excel, fostering resilience and determination. Interacting with like-minded individuals broadened my horizons.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide achievement-card">
-                        <img src="images/cyberx.jpeg" alt="CyberX Hackathon">
-                        <div class="achievement-content">
-                            <h3>Finalist in CyberX Hackathon</h3>
-                            <p>Shortlisted in the top 50 teams among 450+ teams across India for the CyberX HACKATHON organized by Greater Chennai Police and VIT Chennai.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide achievement-card">
-                        <img src="images/hacktopia.jpg" alt="Hacktopia">
-                        <div class="achievement-content">
-                            <h3>Finalist in Hacktopia Hackathon</h3>
-                            <p>Becoming a finalist at Hacktopia 2022 was a pivotal experience. The fierce competition drove me to excel, nurturing my resilience and determination.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide achievement-card">
-                        <img src="images/CSI Award.jpg" alt="CSI Award">
-                        <div class="achievement-content">
-                            <h3>Best Innovative Student Award 2024</h3>
-                            <p>Honored with the Best Innovation Project Award by the Computer Society of India, Kancheepuram Chapter. A special thanks to our CSI coordinator, K.R.RAGHI NAIR mam, whose dedication and guidance propelled me.</p>
-                        </div>
-                    </div>
+            <article class="achievement-card">
+              <div class="achievement-image-wrap">
+                <img
+                  src="images/cyberx.jpeg"
+                  alt="CyberX Hackathon 2023"
+                />
+              </div>
+              <div class="achievement-content">
+                <div class="achievement-badge">Finalist</div>
+                <h3>CyberX Hackathon — 2023</h3>
+                <p class="achievement-meta">
+                  Greater Chennai Police &amp; VIT Chennai · May 2023
+                </p>
+                <p>
+                  Reached the finals of the CyberX Hackathon organized by Greater
+                  Chennai Police and VIT Chennai, demonstrating technical skills and
+                  innovative thinking in a competitive environment.
+                </p>
+              </div>
+            </article>
+
+            <article class="achievement-card">
+              <div class="achievement-image-wrap">
+                <img
+                  src="images/SIH 2022.avif"
+                  alt="Smart India Hackathon 2022"
+                />
+              </div>
+              <div class="achievement-content">
+                <div class="achievement-badge">Finalist</div>
+                <h3>Smart India Hackathon — 2022</h3>
+                <p class="achievement-meta">
+                  Ministry of Education, India · August 2022
+                </p>
+                <p>
+                  Achieved finalist status in Smart India Hackathon 2022, organized
+                  by the Ministry of Education, India, showcasing strong technical
+                  problem-solving and innovation at a national level.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="slider-dots" aria-label="Carousel pages">
+          <button class="is-active" aria-label="Slide 1"></button>
+          <button aria-label="Slide 2"></button>
+          <button aria-label="Slide 3"></button>
+        </div>
+      </section>
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">What <span>Skills</span> I posses ?</h2>
+        <div class="skills-carousel">
+          <div class="skills-wrap">
+            <div class="skill-grid">
+              <div class="skill-row">
+                <div class="skill-card">
+                  <img src="images/HTML5.svg" alt="HTML5" /><span>HTML5</span>
                 </div>
-                <div class="swiper-pagination achievements-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p class="section-label">Contact</p>
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="contact-description">Have a project in mind or want to discuss an opportunity? I'd love to hear from you.</p>
+                <div class="skill-card">
+                  <img src="images/CSS3.svg" alt="CSS3" /><span>CSS3</span>
                 </div>
-                <form class="contact-form" onsubmit="sendMail(); return false;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Project inquiry">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="submit_btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+                <div class="skill-card">
+                  <img src="images/JavaScript.svg" alt="JavaScript" /><span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/React.svg" alt="React" /><span>React</span>
+                </div>
+              </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p class="footer-text">Copyright &copy; 2023 by Hariharaan S. All rights reserved.</p>
-            <a href="#home" class="back-to-top" aria-label="Back to top">
-                <i class="fa-solid fa-arrow-up"></i>
-            </a>
+              <div class="skill-row">
+                <div class="skill-card">
+                  <img src="images/Node.js.svg" alt="Node.js" /><span>Node.js</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/MongoDB.svg" alt="MongoDB" /><span>MongoDB</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Python.svg" alt="Python" /><span>Python</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Git.svg" alt="Git" /><span>Git</span>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-card">
+                  <img src="images/AWS.svg" alt="AWS" /><span>AWS</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Docker.svg" alt="Docker" /><span>Docker</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Express.svg" alt="Express" /><span>Express</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Flask.svg" alt="Flask" /><span>Flask</span>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-card">
+                  <img src="images/Github.svg" alt="GitHub" /><span>GitHub</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Java.svg" alt="Java" /><span>Java</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/jQuery.svg" alt="jQuery" /><span>jQuery</span>
+                </div>
+                <div class="skill-card">
+                  <img src="images/Kubernetes.svg" alt="Kubernetes" /><span>Kubernetes</span>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-card">
+                  <img src="images/MySQL.svg" alt="MySQL" /><span>MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-bar-dots" aria-label="Skills pages">
+            <button class="is-active" aria-label="Skills page 1"></button>
+            <button aria-label="Skills page 2"></button>
+            <button aria-label="Skills page 3"></button>
+            <button aria-label="Skills page 4"></button>
+          </div>
         </div>
+      </section>
+      <section class="projects" id="projects">
+        <h2>
+          Let’s have a look at my <br />
+          <span>Project Works</span>
+        </h2>
+
+        <div class="projects-carousel" aria-label="Project carousel">
+          <div class="projects-track">
+            <div class="project-slide">
+              <a class="project-card" href="/projects/ai-powered-trip-planner"
+                ><img src="images/ai-trip-planner.png" alt="AI-Powered Trip Planner" /><span
+                  class="project-arrow"
+                  >→</span
+                ><strong>AI-Powered Trip Planner</strong></a
+              ><a class="project-card" href="/projects/leaf-detection-classification-system"
+                ><img src="images/BotonAI.png" alt="Leaf Detection & Classification System" /><span
+                  class="project-arrow"
+                  >→</span
+                ><strong>Leaf Detection &amp; Classification System</strong></a
+              >
+            </div>
+            <div class="project-slide">
+              <a class="project-card" href="/projects/trashtriage"
+                ><img src="images/trash-triage.png" alt="TrashTriage" /><span
+                  class="project-arrow"
+                  >→</span
+                ><strong>TrashTriage</strong></a
+              ><a class="project-card" href="/projects/social-media-monitoring"
+                ><img src="images/social-media-monitoring.png" alt="Social Media Monitoring" /><span
+                  class="project-arrow"
+                  >→</span
+                ><strong>Social Media Monitoring</strong></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="project-dots" aria-label="Project pages">
+          <span class="is-active"></span><span></span>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="contact">
+      <div class="footer-top">
+        <h2>Lets Connect there...</h2>
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/in/hariharaan-s-ba9242233/"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin-in"></i></a
+          ><a href="https://github.com/Hariharaan-S" aria-label="GitHub"
+            ><i class="fa-brands fa-github"></i></a
+          ><a href="https://wa.me/918072823999" aria-label="WhatsApp"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-main">
+        <div class="footer-profile">
+          <a class="brand" href="#home"
+            ><span><img src="images/HS.png" alt="" srcset="" /></span
+            ><strong>HARI.</strong></a
+          >
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. icing elit
+            quisque faucibus.
+          </p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="#home">Home</a><a href="#about">About</a
+          ><a href="#skills-heading">Skills</a><a href="#projects">Projects</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Me</h4>
+          <a href="tel:+918072823999"
+            ><i class="fa-solid fa-phone" aria-hidden="true"></i
+            ><span>+91 80728 23999</span></a
+          ><a href="mailto:shariharaan123@gmail.com"
+            ><i class="fa-solid fa-envelope" aria-hidden="true"></i
+            ><span>shariharaan123@gmail.com</span></a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small
+          >Copyright © <span id="year"></span> Hariharaan. All Rights
+          Reserved.</small
+        ><small>User Terms &amp; Conditions | Privacy Policy</small>
+      </div>
     </footer>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        new Typed('.auto-typed', {
-            strings: ['Full Stack Developer', 'Cloud Practitioner', 'DevOps Enthusiast'],
-            typeSpeed: 80,
-            backSpeed: 50,
-            loop: true
-        });
-    </script>
-</body>
-
+  </body>
 </html>

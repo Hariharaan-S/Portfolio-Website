@@ -1,96 +1,136 @@
-/* Navigation scroll behavior */
-const header = document.querySelector(".header");
-const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
-const menuToggle = document.querySelector(".menu-toggle");
-const mobileMenu = document.querySelector(".mobile-menu");
-const sections = document.querySelectorAll("section[id]");
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.mobile-nav');
+const sectionLinks = [...document.querySelectorAll('.top-nav a[href^="#"], .mobile-nav a[href^="#"]')];
+const sections = [...document.querySelectorAll('section[id], footer[id]')];
 
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 50);
+toggle?.addEventListener('click', () => {
+  const isOpen = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(isOpen));
+  menu.setAttribute('aria-hidden', String(!isOpen));
+});
 
-  sections.forEach((sec) => {
-    const top = window.scrollY;
-    const offset = sec.offsetTop - 120;
-    const height = sec.offsetHeight;
-    const id = sec.getAttribute("id");
+menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  menu.classList.remove('open');
+  toggle?.setAttribute('aria-expanded', 'false');
+  menu.setAttribute('aria-hidden', 'true');
+}));
 
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${id}`) {
-          link.classList.add("active");
-        }
-      });
-    }
+const achievementCards = [...document.querySelectorAll('.achievement-card')];
+const achievementDots = [...document.querySelectorAll('.slider-dots button')];
+const achievementTrack = document.querySelector('.unique-carousel-track');
+
+if (achievementCards.length && achievementTrack) {
+  let currentSlide = 0;
+
+  const updateAchievementCarousel = (index) => {
+    currentSlide = index;
+    achievementTrack.style.transform = `translateX(-${index * 100}%)`;
+
+    achievementDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === index);
+      dot.setAttribute('aria-current', dotIndex === index ? 'true' : 'false');
+    });
+  };
+
+  achievementDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => updateAchievementCarousel(index));
   });
-});
 
-/* Mobile menu toggle */
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  mobileMenu.classList.toggle("open");
-});
-
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    menuToggle.classList.remove("active");
-    mobileMenu.classList.remove("open");
-  });
-});
-
-/* Achievements Swiper */
-const achievementsSwiper = new Swiper(".mySwiperAchievements", {
-  loop: true,
-  spaceBetween: 24,
-  slidesPerView: 1,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".achievements-pagination",
-    clickable: true,
-  },
-  speed: 600,
-});
-
-/* Scroll Reveal */
-ScrollReveal({ distance: "30px", duration: 800, easing: "ease-out", reset: false });
-ScrollReveal().reveal(".hero-content", { origin: "left", delay: 100 });
-ScrollReveal().reveal(".hero-image", { origin: "right", delay: 200 });
-ScrollReveal().reveal(".section-header", { origin: "top", interval: 100 });
-ScrollReveal().reveal(".timeline-item", { origin: "left", interval: 150 });
-ScrollReveal().reveal(".service-card", { origin: "bottom", interval: 100 });
-ScrollReveal().reveal(".project-card", { origin: "bottom", interval: 100 });
-ScrollReveal().reveal(".achievement-card", { origin: "bottom" });
-ScrollReveal().reveal(".contact-info, .contact-form", { origin: "bottom", interval: 150 });
-
-/* Send Mail */
-async function sendMail() {
-  const success = await fetch(
-    "/send?name=" +
-      document.getElementById("name").value +
-      "&email=" +
-      document.getElementById("email").value +
-      "&phone=" +
-      document.getElementById("phone").value +
-      "&message=" +
-      document.getElementById("message").value
-  );
-  if (success.status === 200) {
-    Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: "s.hariharaan.college@gmail.com",
-      Password: "86DA580AD5A5A30A21005D01D81E2ADA95A6",
-      From: "s.hariharaan.college@gmail.com",
-      To: document.getElementById("email").value,
-      Subject: "Successfully Submitted the Query",
-      Body: "Thank you for reaching me. I will see to the query and turn in within 2 or 3 working days.",
-    }).then(() => (window.location.href = "/"));
-  }
+  setInterval(() => {
+    const nextSlide = (currentSlide + 1) % achievementCards.length;
+    updateAchievementCarousel(nextSlide);
+  }, 4500);
 }
 
-/* Dynamic copyright year */
-const year = new Date().getFullYear();
-document.querySelector(".footer-text").innerHTML =
-  `Copyright &copy; ${year} by Hariharaan S. All rights reserved.`;
+const skillsWrap = document.querySelector('.skills-wrap');
+const skillsBars = [...document.querySelectorAll('.skills-bar-dots button')];
+
+if (skillsWrap && skillsBars.length) {
+  const updateSkillsBars = (index) => {
+    const maxIndex = skillsBars.length - 1;
+    const maxScroll = Math.max(skillsWrap.scrollHeight - skillsWrap.clientHeight, 1);
+    const targetScroll = (maxScroll / maxIndex) * index;
+
+    skillsWrap.scrollTo({ top: targetScroll, behavior: 'smooth' });
+
+    skillsBars.forEach((bar, barIndex) => {
+      const isActive = barIndex === index;
+      bar.classList.toggle('is-active', isActive);
+      bar.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  };
+
+  skillsBars.forEach((bar, index) => {
+    bar.addEventListener('click', () => updateSkillsBars(index));
+  });
+
+  skillsWrap.addEventListener('scroll', () => {
+    const maxScroll = Math.max(skillsWrap.scrollHeight - skillsWrap.clientHeight, 1);
+    const ratio = maxScroll === 0 ? 0 : skillsWrap.scrollTop / maxScroll;
+    const activeIndex = Math.min(skillsBars.length - 1, Math.max(0, Math.round(ratio * (skillsBars.length - 1))));
+
+    skillsBars.forEach((bar, index) => {
+      const isActive = index === activeIndex;
+      bar.classList.toggle('is-active', isActive);
+      bar.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  });
+}
+
+const projectCarousel = document.querySelector('.projects-carousel');
+const projectSlides = [...document.querySelectorAll('.project-slide')];
+const projectDots = [...document.querySelectorAll('.project-dots span')];
+
+if (projectCarousel && projectSlides.length && projectDots.length) {
+  const updateProjectDots = () => {
+    const lastScrollPosition = projectCarousel.scrollWidth - projectCarousel.clientWidth;
+    const activeIndex = projectSlides.reduce((closestIndex, slide, index) => {
+      const closestDistance = Math.abs(projectCarousel.scrollLeft - projectSlides[closestIndex].offsetLeft);
+      const slideDistance = Math.abs(projectCarousel.scrollLeft - slide.offsetLeft);
+      return slideDistance < closestDistance ? index : closestIndex;
+    }, 0);
+    const boundedIndex = projectCarousel.scrollLeft >= lastScrollPosition - 1
+      ? projectSlides.length - 1
+      : Math.min(activeIndex, projectDots.length - 1);
+
+    projectDots.forEach((dot, index) => {
+      dot.classList.toggle('is-active', index === boundedIndex);
+    });
+  };
+
+  projectDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      const targetSlide = projectSlides[index];
+      if (!targetSlide) return;
+      projectCarousel.scrollTo({ left: targetSlide.offsetLeft, behavior: 'smooth' });
+      updateProjectDots();
+    });
+  });
+
+  projectCarousel.addEventListener('scroll', updateProjectDots, { passive: true });
+  updateProjectDots();
+}
+
+function setActiveSection(id) {
+  sectionLinks.forEach((link) => {
+    const isCurrent = link.getAttribute('href') === `#${id}`;
+    link.classList.toggle('active', isCurrent);
+    link.toggleAttribute('aria-current', isCurrent);
+  });
+}
+
+function updateActiveSection() {
+  const activationPoint = window.scrollY + 135;
+  let activeSection = sections[0];
+
+  sections.forEach((section) => {
+    if (section.offsetTop <= activationPoint) activeSection = section;
+  });
+
+  setActiveSection(activeSection.id);
+}
+
+window.addEventListener('scroll', updateActiveSection, { passive: true });
+window.addEventListener('load', updateActiveSection);
+updateActiveSection();
+document.querySelector('#year').textContent = new Date().getFullYear();
