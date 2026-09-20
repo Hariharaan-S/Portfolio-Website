@@ -7,6 +7,6 @@ const router = express.Router();
 router.get("/", homePage);
 router.get("/send", sendMessage);
 router.get("/services/:name", servicePage);
-router.get("/projects/:name", projectPage);
+router.get("/projects/:project_id", projectPage);
 
 export default router;

@@ -1,11 +1,7 @@
 import mongoose from "mongoose";
 
-const isDevelopment = true;
-
 const connectDB = async () => {
-  const mongoURI = isDevelopment
-    ? "mongodb://localhost:27017/portfolio"
-    : process.env.MONGO_DB_PROD_CLIENT;
+  const mongoURI = process.env.MONGO_DB_URI || "mongodb://localhost:27017/portfolio";
 
   try {
     await mongoose.connect(mongoURI);

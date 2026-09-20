@@ -1,8 +1,20 @@
 import Service from "../models/Service.js";
 import Project from "../models/Project.js";
+import Skill from "../models/Skill.js";
+import Achievement from "../models/Achievement.js";
 
-export const homePage = (req, res) => {
-  res.render("index.ejs");
+export const homePage = async (req, res) => {
+  const [skills, projects, achievements] = await Promise.all([
+    Skill.find().sort({ order: 1, createdAt: 1 }),
+    Project.find().sort({ order: 1, createdAt: 1 }),
+    Achievement.find().sort({ order: 1, createdAt: 1 }),
+  ]);
+
+  res.render("index.ejs", { skills, projects, achievements });
+};
+
+export const notFoundPage = (req, res) => {
+  res.status(404).render("404.ejs");
 };
 
 export const servicePage = async (req, res) => {
@@ -13,7 +25,7 @@ export const servicePage = async (req, res) => {
     const service = services[0];
 
     if (!service) {
-      return res.status(404).send("Service not found");
+      return notFoundPage(req, res);
     }
 
     res.render("services.ejs", {
@@ -30,31 +42,25 @@ export const servicePage = async (req, res) => {
 };
 
 export const projectPage = async (req, res) => {
-  let ser_name = req.params.name;
-  const imageName = ser_name;
-
-  if (ser_name === "Trash_Triage") {
-    const temp = ser_name.split("_");
-    ser_name = temp[0] + temp[1];
-  }
+  const { project_id } = req.params;
 
   try {
-    const projects = await Project.find({ project: ser_name });
-    const project = projects[0];
+    const project = await Project.findOne({ project_id });
 
     if (!project) {
-      return res.status(404).send("Project not found");
+      return notFoundPage(req, res);
     }
 
-    const keyFeatures = project.key_features.split("\n");
+    const keyFeatures = (project.key_features || "").split("\n").filter(Boolean);
 
     res.render("projects.ejs", {
-      name: ser_name,
-      image_name: imageName,
+      name: project.project,
+      image_name: project.image || project_id,
       content: project.content,
       about: project.about,
       techstack: project.techstack,
       key: keyFeatures,
+      video_name: project.video || project.project,
     });
   } catch (error) {
     console.error(error);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Hariharaan</title>
+    <style>
+      :root { --blue: #399bff; --ink: #181818; --navy: #11121e; }
+      * { box-sizing: border-box; }
+      body {
+        min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px;
+        color: #fff; background: linear-gradient(135deg, var(--navy), #033363);
+        font-family: Poppins, Arial, sans-serif;
+      }
+      main { width: min(420px, 100%); padding: 34px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); border-radius: 20px; backdrop-filter: blur(14px); }
+      h1 { margin: 0 0 8px; font-size: 1.8rem; }
+      p { color: #cfe7ff; line-height: 1.5; }
+      label { display: block; margin: 18px 0 7px; font-size: .85rem; }
+      input { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 8px; color: #fff; background: rgba(0,0,0,.2); }
+      button { width: 100%; margin-top: 24px; padding: 12px; border: 0; border-radius: 8px; color: var(--ink); background: var(--blue); font-weight: 700; cursor: pointer; }
+      .error { padding: 10px 12px; color: #ffd3d3; background: rgba(170,0,0,.3); border-radius: 8px; }
+      a { display: inline-block; margin-top: 20px; color: #cfe7ff; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Admin panel</h1>
+      <p>Sign in to manage your portfolio content.</p>
+      <% if (error) { %><p class="error"><%= error %></p><% } %>
+      <form method="post" action="/admin/login">
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" required />
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+        <button type="submit">Sign in</button>
+      </form>
+      <a href="/">Return to portfolio</a>
+    </main>
+  </body>
+</html>
